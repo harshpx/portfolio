@@ -1,12 +1,11 @@
 import { useState } from 'react';
-import {motion} from 'framer-motion';
+import {Link} from 'react-scroll';
 
 import {BsFillMoonStarsFill} from 'react-icons/bs';
 import { IoSunny, IoMail, IoCall } from "react-icons/io5";
 import { FcLinux } from "react-icons/fc";
 import { FaKaggle } from 'react-icons/fa';
-import { SiLeetcode, SiLinkedin, SiGithub, SiPostcss, SiPostgresql, SiMaildotru } from "react-icons/si";
-import {SiHtml5,SiCss3,SiJavascript,SiReact,SiRedux,SiFramer,SiTailwindcss,SiExpress,SiSocketdotio,SiNodedotjs,SiVercel,SiPython,SiTensorflow,SiScikitlearn,SiStreamlit,SiFlask,SiAppwrite,SiFirebase,SiMysql,SiMongodb,SiGnubash} from 'react-icons/si';
+import {SiLeetcode, SiLinkedin, SiGithub, SiPostcss, SiPostgresql,SiHtml5,SiCss3,SiJavascript,SiReact,SiRedux,SiFramer,SiTailwindcss,SiExpress,SiSocketdotio,SiNodedotjs,SiVercel,SiPython,SiTensorflow,SiScikitlearn,SiStreamlit,SiFlask,SiAppwrite,SiFirebase,SiMysql,SiMongodb,SiGnubash} from 'react-icons/si';
 
 import Avatar from './assets/avatar.jpg';
 import ProjectCard from './ProjectCard';
@@ -20,16 +19,6 @@ import VAR from './assets/icons/var.png';
 function App() {
     const [darkMode,setDarkMode] = useState(true);
 
-    const animations = {
-        style: {
-            position: "static"
-        },
-        initial: { scale: 0, opacity: 0 },
-        animate: { scale: 1, opacity: 1 },
-        exit: { scale: 0, opacity: 0 },
-        transition: { type: "spring", stiffness: 900, damping: 40 }
-    };
-
     return (
         <div className={`${darkMode?"dark":""}`}>
 
@@ -38,10 +27,10 @@ function App() {
                 <nav className="py-2 flex justify-between items-center text-center text-sm sm:text-base">
                     {/* links */}
                     <div className='flex text-l text-black dark:text-white'>
-                        <a href="#" className='my-auto'>About Me</a>
-                        <a href="#" className='mx-5 my-auto'>Projects</a>
-                        <a href="#" className='my-auto'>Tech Stack</a>
-                        <a href="#" className='mx-5 my-auto'>Contact Me</a>
+                        <Link to='about' spy={true} smooth={true} offset={-70} duration={500} className='my-auto cursor-pointer hover:text-teal-700 decoraion-teal-600 dark:hover:text-teal-400 hover:underline hover:underline-offset-4 dark:decoration-teal-400 active:text-teal-700 dark:active:text-teal-400 active:decoration-teal-600 dark:active:decoration-teal-400 nav-item'>About Me</Link>
+                        <Link to='projects' spy={true} smooth={true} offset={-70} duration={500} className='mx-5 my-auto cursor-pointer hover:text-teal-600 decoraion-teal-700 dark:hover:text-teal-400 dark:hover:underline hover:underline-offset-4 dark:decoration-teal-400 active:text-teal-700 dark:active:text-teal-400 active:decoration-teal-600 dark:active:decoration-teal-400 nav-item'>Projects</Link>
+                        <Link to='stack' spy={true} smooth={true} offset={-70} duration={500} className='my-auto cursor-pointer hover:text-teal-700 decoraion-teal-600 dark:hover:text-teal-400 hover:underline hover:underline-offset-4 dark:decoration-teal-400 active:text-teal-700 dark:active:text-teal-400 active:decoration-teal-600 dark:active:decoration-teal-400 nav-item'>Tech Stack</Link>
+                        <Link to='contact' spy={true} smooth={true} offset={-70} duration={500} className='mx-5 my-auto cursor-pointer hover:text-teal-700 decoraion-teal-600 dark:hover:text-teal-400 hover:underline hover:underline-offset-4 dark:decoration-teal-400 active:text-teal-700 dark:active:text-teal-400 active:decoration-teal-600 dark:active:decoration-teal-400 nav-item'>Contact Me</Link>
                     </div>
                     {/* theme switch button */}
                     <div className='cursor-pointer text-2xl rounded-full p-1.5 text-teal-600 dark:text-teal-400 hover:text-teal-400 dark:hover:text-teal-600 hover:bg-black dark:hover:bg-neutral-200' onClick={()=>setDarkMode((prev)=>!prev)}>
@@ -51,13 +40,13 @@ function App() {
             </div>
 
             {/* page contents */}
-            <div className='bg-neutral-200 dark:bg-gradient-to-b from-slate-900 to-slate-800 px-5 sm:px-10 md:px-15 lg:px-25 xl:px-30 font-segoeUI transition-all duration-300'>
+            <div className='bg-neutral-200 dark:bg-slate-900 px-5 sm:px-10 md:px-15 lg:px-25 xl:px-30 font-segoeUI transition-all duration-300'>
                 {/* 1st section */}
-                <section className="min-h-screen" id='about-me'>
+                <section className="min-h-screen" id='about'>
                     {/* intro */}
-                    <div id='intro' className='flex flex-col sm:flex-row sm:justify-center gap-y-7 sm:gap-x-5 items-center pt-28 sm:pt-44'>
+                    <div className='flex flex-col sm:flex-row sm:justify-center gap-y-7 sm:gap-x-5 items-center pt-28 sm:pt-44'>
                         {/* image */}
-                        <div className=' w-48 sm:w-52 md:w-56 overflow-hidden' style={{animation: 'movingEllipse 8s linear infinite normal'}}>
+                        <div className=' w-48 sm:w-52 md:w-56 overflow-hidden' style={{animation: 'movingEllipse 7s linear infinite normal'}}>
                             <img src={Avatar} alt="Profile Picture"/>
                         </div>
                         {/* name and information */}
@@ -82,7 +71,7 @@ function App() {
                     </div>
                 </section>
                 {/* project section */}
-                <section className='min-h-screen mt-20 sm:mt-20'>
+                <section id='projects' className='min-h-screen mt-20 sm:mt-20'>
                     <div className='dark:text-white flex flex-col items-center justify-center '>
                         <h1 className='text-teal-600 dark:text-teal-400 text-5xl md:text-6xl mb-10'>Projects</h1>
                         <div className='flex flex-wrap items-end justify-center gap-3 xl:w-10/12'>
@@ -105,7 +94,7 @@ function App() {
                 </section>
 
                 {/* tech stack section */}
-                <section className='min-h-screen mt-20'>
+                <section id='stack' className='min-h-screen mt-20'>
                     <div className='dark:text-white flex flex-col items-center justify-center '>
                         <h1 className='text-teal-600 dark:text-teal-400 text-5xl md:text-6xl mb-14'>My Stack</h1>
                         <div className='flex flex-wrap justify-center items-center gap-12 sm:gap-20 md:gap-24 lg:gap-28 px-4 sm:px-8 md:px-28 lg:px-32'>
@@ -138,8 +127,8 @@ function App() {
                     </div>
                 </section>
 
-                {/* tech stack section */}
-                <section className='min-h-screen mt-20'>
+                {/* contact section */}
+                <section id='contact' className='min-h-screen mt-20'>
                     <div className='dark:text-white flex flex-col items-center justify-center '>
                         <h1 className='text-teal-600 dark:text-teal-400 text-5xl md:text-6xl mb-48'>Contact Me</h1>
                         <div className='flex flex-wrap justify-center items-center gap-12 sm:gap-20 md:gap-24 lg:gap-28 px-4 sm:px-8 md:px-28 lg:px-32'>

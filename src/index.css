@@ -76,5 +76,9 @@
     animation: bounce 5s linear reverse infinite;
 }
 
+.nav-item .active{
+    color: rgb(26, 157, 157);
+    text-decoration-color: rgb(26, 157, 157);
+}
 
 
