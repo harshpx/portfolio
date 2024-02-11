@@ -48,7 +48,7 @@ function App() {
             <div className='bg-neutral-200 dark:bg-slate-900 px-5 sm:px-10 md:px-15 lg:px-25 xl:px-30 font-segoeUI transition-all duration-300'>
 
                 {/* intro section */}
-                <section className=" h-screen" id='about'>
+                <section className=" min-h-screen" id='about'>
                     {/* intro */}
                     <div className='flex flex-col sm:flex-row sm:justify-center gap-y-7 sm:gap-x-5 items-center pt-28 sm:pt-44'>
                         {/* image */}
