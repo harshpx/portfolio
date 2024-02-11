@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "segoeUI";
+    src: url('./assets/fonts/SegoeUI.ttf');
+}
+
+@font-face {
+    font-family: "poppins";
+    src: url('./assets/fonts/Poppins-Regular.ttf');
+}
+
+@font-face {
+    font-family: "fallingSky";
+    src: url('./assets/fonts/FallingSky.otf');
+}
+
+@font-face {
+    font-family: "sfPro";
+    src: url('./assets/fonts/SF-Pro.OTF');
+}
+
+@keyframes movingEllipse{
+    0%{
+        border-radius: 70% 100% 70% 100%;
+        
+    }
+    12.5%{
+        border-radius: 70% 70% 70% 90%;
+     
+    }
+    25%{
+        border-radius: 100% 70% 100% 70%;
+        
+    }
+    37.5%{
+        border-radius: 90% 70% 70% 70%;
+    }
+    50%{
+        border-radius: 70% 100% 70% 100%;
+        
+    }
+    62.5%{
+        border-radius: 70% 90% 70% 70%;
+              
+    }
+    75%{
+        border-radius: 100% 70% 100% 70%;
+         
+    }
+    87.5%{
+        border-radius: 70% 70% 90% 70%;
+      
+    }
+    100%{
+        border-radius: 70% 100% 70% 100%;
+         
+    }
+
+}
+
+
+
+
