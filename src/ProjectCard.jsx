@@ -23,50 +23,50 @@ function ProjectCard({dark,title,description,stack=[],applink,code,image}) {
                     <div className=' gap-x-4 flex flex-wrap items-center justify-center text-center'>
                         {stack.map(tech => {
                             if(tech=='react'){
-                                return (<div className='flex  items-center gap-x-1'><SiReact /><span className='text-sm'>React JS</span></div>)
+                                return (<div key={tech} className='flex  items-center gap-x-1'><SiReact /><span className='text-sm'>React JS</span></div>)
                             }
                             if(tech=='redux'){
-                                return (<div className='flex  items-center gap-x-1'><SiRedux /><span className='text-sm'>Redux-Toolkit</span></div>)
+                                return (<div key={tech} className='flex  items-center gap-x-1'><SiRedux /><span className='text-sm'>Redux-Toolkit</span></div>)
                             }
                             if(tech=='express'){
-                                return (<div className='flex  items-center gap-x-1'><SiExpress /><span className='text-sm'>Express JS</span></div>)
+                                return (<div key={tech} className='flex  items-center gap-x-1'><SiExpress /><span className='text-sm'>Express JS</span></div>)
                             }
                             if(tech=='tailwind'){
-                                return (<div className='flex  items-center gap-x-1'><SiTailwindcss /><span className='text-sm'>Tailwind CSS</span></div>)
+                                return (<div key={tech} className='flex  items-center gap-x-1'><SiTailwindcss /><span className='text-sm'>Tailwind CSS</span></div>)
                             }
                             if(tech=='css'){
-                                return (<div className='flex  items-center gap-x-1'><SiCss3 /><span className='text-sm'>Vanilla CSS</span></div>)
+                                return (<div key={tech} className='flex  items-center gap-x-1'><SiCss3 /><span className='text-sm'>Vanilla CSS</span></div>)
                             }
                             if(tech=='node'){
-                                return (<div className='flex  items-center gap-x-1'><SiNodedotjs /><span className='text-sm'>Node JS</span></div>)
+                                return (<div key={tech} className='flex  items-center gap-x-1'><SiNodedotjs /><span className='text-sm'>Node JS</span></div>)
                             }
                             if(tech=='mongodb'){
-                                return (<div className='flex  items-center gap-x-1'><SiMongodb /><span className='text-sm'>Mongo DB</span></div>)
+                                return (<div key={tech} className='flex  items-center gap-x-1'><SiMongodb /><span className='text-sm'>Mongo DB</span></div>)
                             }
                             if(tech=='appwrite'){
-                                return (<div className='flex  items-center gap-x-1'><SiAppwrite /><span className='text-sm'>Appwrite</span></div>)
+                                return (<div key={tech} className='flex  items-center gap-x-1'><SiAppwrite /><span className='text-sm'>Appwrite</span></div>)
                             }
                             if(tech=='python'){
-                                return (<div className='flex  items-center gap-x-1'><SiPython /><span className='text-sm'>Python</span></div>)
+                                return (<div key={tech} className='flex  items-center gap-x-1'><SiPython /><span className='text-sm'>Python</span></div>)
                             }
                             if(tech=='tensorflow'){
-                                return (<div className='flex  items-center gap-x-1'><SiTensorflow /><span className='text-sm'>TensorFlow</span></div>)
+                                return (<div key={tech} className='flex  items-center gap-x-1'><SiTensorflow /><span className='text-sm'>TensorFlow</span></div>)
                             }
                             if(tech=='sklearn'){
-                                return (<div className='flex  items-center gap-x-1'><SiScikitlearn /><span className='text-sm'>Scikit-Learn</span></div>)
+                                return (<div key={tech} className='flex  items-center gap-x-1'><SiScikitlearn /><span className='text-sm'>Scikit-Learn</span></div>)
                             }
                             if(tech=='flask'){
-                                return (<div className='flex  items-center gap-x-1'><SiFlask /><span className='text-sm'>Flask</span></div>)
+                                return (<div key={tech} className='flex  items-center gap-x-1'><SiFlask /><span className='text-sm'>Flask</span></div>)
                             }
                             if(tech=='streamlit'){
-                                return (<div className='flex  items-center gap-x-1'><SiStreamlit /><span className='text-sm'>Streamlit</span></div>)
+                                return (<div key={tech} className='flex  items-center gap-x-1'><SiStreamlit /><span className='text-sm'>Streamlit</span></div>)
                             }
                             if(tech=='opencv'){
-                                return (<div className='flex  items-center gap-x-1'><SiOpencv /><span className='text-sm'>OpenCV</span></div>)
+                                return (<div key={tech} className='flex  items-center gap-x-1'><SiOpencv /><span className='text-sm'>OpenCV</span></div>)
                             }
 
                         })}
-                        {/* <div className='flex  items-center gap-x-1'><SiTailwindcss /><span className='text-sm'>Tailwind CSS</span></div>
+                        {/* <div key={tech} className='flex  items-center gap-x-1'><SiTailwindcss /><span className='text-sm'>Tailwind CSS</span></div>
                         <div className='flex  items-center gap-x-1'><SiExpress /><span className='text-sm'>Express JS</span></div>
                         <div className='flex  items-center gap-x-1'><SiExpress /><span className='text-sm'>Express JS</span></div>
                         <div className='flex  items-center gap-x-1'><SiExpress /><span className='text-sm'>Express JS</span></div> */}

@@ -61,6 +61,20 @@
 
 }
 
+@keyframes bounce {
+    0%{
+        translate: -1000%;
+    }100%{
+        translate: 1000%;
+    }
+}
+
+.bounceEff{
+    animation: bounce 5s linear infinite;
+}
+.bounceEffRev{
+    animation: bounce 5s linear reverse infinite;
+}
 
 
 
