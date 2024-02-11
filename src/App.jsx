@@ -28,13 +28,13 @@ function App() {
                     {/* links */}
                     <div className='flex text-l text-black dark:text-white'>
 
-                        <Link to='about' activeClass="active" spy={true} smooth={true} offset={0} duration={500} className='my-auto cursor-pointer hover:text-teal-700 decoraion-teal-600 dark:hover:text-teal-400 hover:underline hover:underline-offset-4 dark:decoration-teal-400 nav-item'>About Me</Link>
+                        <Link to='about' activeClass="active" spy={true} smooth={true} offset={-10} duration={500} className='my-auto cursor-pointer hover:text-teal-700 decoraion-teal-600 dark:hover:text-teal-400 hover:underline hover:underline-offset-4 dark:decoration-teal-400 nav-item'>About Me</Link>
 
-                        <Link to='projects' activeClass="active" spy={true} smooth={true} offset={0} duration={500} className='mx-5 my-auto cursor-pointer hover:text-teal-600 decoraion-teal-700 dark:hover:text-teal-400 dark:hover:underline hover:underline-offset-4 dark:decoration-teal-400 nav-item'>Projects</Link>
+                        <Link to='projects' activeClass="active" spy={true} smooth={true} offset={-10} duration={500} className='mx-5 my-auto cursor-pointer hover:text-teal-600 decoraion-teal-700 dark:hover:text-teal-400 dark:hover:underline hover:underline-offset-4 dark:decoration-teal-400 nav-item'>Projects</Link>
 
-                        <Link to='stack' activeClass="active" spy={true} smooth={true} offset={0} duration={500} className='my-auto cursor-pointer hover:text-teal-700 decoraion-teal-600 dark:hover:text-teal-400 hover:underline hover:underline-offset-4 dark:decoration-teal-400 nav-item'>Tech Stack</Link>
+                        <Link to='stack' activeClass="active" spy={true} smooth={true} offset={-10} duration={500} className='my-auto cursor-pointer hover:text-teal-700 decoraion-teal-600 dark:hover:text-teal-400 hover:underline hover:underline-offset-4 dark:decoration-teal-400 nav-item'>Tech Stack</Link>
 
-                        <Link to='contact' activeClass="active" spy={true} smooth={true} offset={0} duration={500} className='mx-5 my-auto cursor-pointer hover:text-teal-700 decoraion-teal-600 dark:hover:text-teal-400 hover:underline hover:underline-offset-4 dark:decoration-teal-400 nav-item'>Contact Me</Link>
+                        <Link to='contact' activeClass="active" spy={true} smooth={true} offset={-10} duration={500} className='mx-5 my-auto cursor-pointer hover:text-teal-700 decoraion-teal-600 dark:hover:text-teal-400 hover:underline hover:underline-offset-4 dark:decoration-teal-400 nav-item'>Contact Me</Link>
 
                     </div>
                     {/* theme switch button */}
@@ -48,7 +48,7 @@ function App() {
             <div className='bg-neutral-200 dark:bg-slate-900 px-5 sm:px-10 md:px-15 lg:px-25 xl:px-30 font-segoeUI transition-all duration-300'>
 
                 {/* intro section */}
-                <section className="min-h-screen" id='about'>
+                <section className=" h-screen" id='about'>
                     {/* intro */}
                     <div className='flex flex-col sm:flex-row sm:justify-center gap-y-7 sm:gap-x-5 items-center pt-28 sm:pt-44'>
                         {/* image */}
@@ -78,8 +78,8 @@ function App() {
                 </section>
 
                 {/* project section */}
-                <section id='projects' className='min-h-screen pt-24'>
-                    <div className='dark:text-white flex flex-col items-center justify-center '>
+                <section id='projects' className=' min-h-screen mt-16 pt-16'>
+                    <div  className='dark:text-white flex flex-col items-center justify-center '>
                         <h1 className='text-teal-600 dark:text-teal-400 text-5xl md:text-6xl mb-10'>Projects</h1>
                         <div className='flex flex-wrap items-end justify-center gap-3 xl:w-10/12'>
                                 <div className='columns-1 sm:columns-2 xl:columns-3 gap-5'>
@@ -101,7 +101,7 @@ function App() {
                 </section>
 
                 {/* tech stack section */}
-                <section id='stack' className='min-h-screen pt-24'>
+                <section id='stack' className='min-h-screen mt-16 pt-20'>
                     <div className='dark:text-white flex flex-col items-center justify-center '>
                         <h1 className='text-teal-600 dark:text-teal-400 text-5xl md:text-6xl mb-14'>My Stack</h1>
                         <div className='flex flex-wrap justify-center items-center gap-12 sm:gap-20 md:gap-24 lg:gap-28 px-4 sm:px-8 md:px-28 lg:px-32'>
@@ -135,7 +135,7 @@ function App() {
                 </section>
 
                 {/* contact section */}
-                <section id='contact' className='min-h-screen pt-24'>
+                <section id='contact' className='min-h-screen mt-16 pt-24'>
                     <div className='dark:text-white flex flex-col items-center justify-center '>
                         <h1 className='text-teal-600 dark:text-teal-400 text-5xl md:text-6xl mb-48'>Contact Me</h1>
                         <div className='flex flex-wrap justify-center items-center gap-12 sm:gap-20 md:gap-24 lg:gap-28 px-4 sm:px-8 md:px-28 lg:px-32'>
