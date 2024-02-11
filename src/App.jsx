@@ -27,10 +27,15 @@ function App() {
                 <nav className="py-2 flex justify-between items-center text-center text-sm sm:text-base">
                     {/* links */}
                     <div className='flex text-l text-black dark:text-white'>
-                        <Link to='about' spy={true} smooth={true} offset={-70} duration={500} className='my-auto cursor-pointer hover:text-teal-700 decoraion-teal-600 dark:hover:text-teal-400 hover:underline hover:underline-offset-4 dark:decoration-teal-400 active:text-teal-700 dark:active:text-teal-400 active:decoration-teal-600 dark:active:decoration-teal-400 nav-item'>About Me</Link>
-                        <Link to='projects' spy={true} smooth={true} offset={-70} duration={500} className='mx-5 my-auto cursor-pointer hover:text-teal-600 decoraion-teal-700 dark:hover:text-teal-400 dark:hover:underline hover:underline-offset-4 dark:decoration-teal-400 active:text-teal-700 dark:active:text-teal-400 active:decoration-teal-600 dark:active:decoration-teal-400 nav-item'>Projects</Link>
-                        <Link to='stack' spy={true} smooth={true} offset={-70} duration={500} className='my-auto cursor-pointer hover:text-teal-700 decoraion-teal-600 dark:hover:text-teal-400 hover:underline hover:underline-offset-4 dark:decoration-teal-400 active:text-teal-700 dark:active:text-teal-400 active:decoration-teal-600 dark:active:decoration-teal-400 nav-item'>Tech Stack</Link>
-                        <Link to='contact' spy={true} smooth={true} offset={-70} duration={500} className='mx-5 my-auto cursor-pointer hover:text-teal-700 decoraion-teal-600 dark:hover:text-teal-400 hover:underline hover:underline-offset-4 dark:decoration-teal-400 active:text-teal-700 dark:active:text-teal-400 active:decoration-teal-600 dark:active:decoration-teal-400 nav-item'>Contact Me</Link>
+
+                        <Link to='about' activeClass="active" spy={true} smooth={true} offset={0} duration={500} className='my-auto cursor-pointer hover:text-teal-700 decoraion-teal-600 dark:hover:text-teal-400 hover:underline hover:underline-offset-4 dark:decoration-teal-400 nav-item'>About Me</Link>
+
+                        <Link to='projects' activeClass="active" spy={true} smooth={true} offset={0} duration={500} className='mx-5 my-auto cursor-pointer hover:text-teal-600 decoraion-teal-700 dark:hover:text-teal-400 dark:hover:underline hover:underline-offset-4 dark:decoration-teal-400 nav-item'>Projects</Link>
+
+                        <Link to='stack' activeClass="active" spy={true} smooth={true} offset={0} duration={500} className='my-auto cursor-pointer hover:text-teal-700 decoraion-teal-600 dark:hover:text-teal-400 hover:underline hover:underline-offset-4 dark:decoration-teal-400 nav-item'>Tech Stack</Link>
+
+                        <Link to='contact' activeClass="active" spy={true} smooth={true} offset={0} duration={500} className='mx-5 my-auto cursor-pointer hover:text-teal-700 decoraion-teal-600 dark:hover:text-teal-400 hover:underline hover:underline-offset-4 dark:decoration-teal-400 nav-item'>Contact Me</Link>
+
                     </div>
                     {/* theme switch button */}
                     <div className='cursor-pointer text-2xl rounded-full p-1.5 text-teal-600 dark:text-teal-400 hover:text-teal-400 dark:hover:text-teal-600 hover:bg-black dark:hover:bg-neutral-200' onClick={()=>setDarkMode((prev)=>!prev)}>
@@ -41,7 +46,8 @@ function App() {
 
             {/* page contents */}
             <div className='bg-neutral-200 dark:bg-slate-900 px-5 sm:px-10 md:px-15 lg:px-25 xl:px-30 font-segoeUI transition-all duration-300'>
-                {/* 1st section */}
+
+                {/* intro section */}
                 <section className="min-h-screen" id='about'>
                     {/* intro */}
                     <div className='flex flex-col sm:flex-row sm:justify-center gap-y-7 sm:gap-x-5 items-center pt-28 sm:pt-44'>
@@ -70,8 +76,9 @@ function App() {
                         <p><span className='text-teal-600 dark:text-teal-400'>Hello and welcome!</span> I'm thrilled to have you here.<br/>I am Harsh, a Full-Stack Web-Developer, particularly specializing in the <span className='text-green-600 dark:text-green-400'>M</span><span className='text-yellow-600 dark:text-yellow-400'>E</span><span className='text-teal-600 dark:text-teal-400'>R</span><span className='text-green-600 dark:text-green-400'>N</span> stack.<br/>Also a Machine Learning Enthusiast, proficient in <span className='text-yellow-600 dark:text-yellow-400'>Python</span>, <span className='text-blue-500 dark:text-blue-300'>Scikit-Learn</span> and <span className='text-orange-600 dark:text-orange-400'>TensorFlow</span> stack.</p>
                     </div>
                 </section>
+
                 {/* project section */}
-                <section id='projects' className='min-h-screen mt-20 sm:mt-20'>
+                <section id='projects' className='min-h-screen pt-24'>
                     <div className='dark:text-white flex flex-col items-center justify-center '>
                         <h1 className='text-teal-600 dark:text-teal-400 text-5xl md:text-6xl mb-10'>Projects</h1>
                         <div className='flex flex-wrap items-end justify-center gap-3 xl:w-10/12'>
@@ -94,7 +101,7 @@ function App() {
                 </section>
 
                 {/* tech stack section */}
-                <section id='stack' className='min-h-screen mt-20'>
+                <section id='stack' className='min-h-screen pt-24'>
                     <div className='dark:text-white flex flex-col items-center justify-center '>
                         <h1 className='text-teal-600 dark:text-teal-400 text-5xl md:text-6xl mb-14'>My Stack</h1>
                         <div className='flex flex-wrap justify-center items-center gap-12 sm:gap-20 md:gap-24 lg:gap-28 px-4 sm:px-8 md:px-28 lg:px-32'>
@@ -128,7 +135,7 @@ function App() {
                 </section>
 
                 {/* contact section */}
-                <section id='contact' className='min-h-screen mt-20'>
+                <section id='contact' className='min-h-screen pt-24'>
                     <div className='dark:text-white flex flex-col items-center justify-center '>
                         <h1 className='text-teal-600 dark:text-teal-400 text-5xl md:text-6xl mb-48'>Contact Me</h1>
                         <div className='flex flex-wrap justify-center items-center gap-12 sm:gap-20 md:gap-24 lg:gap-28 px-4 sm:px-8 md:px-28 lg:px-32'>
