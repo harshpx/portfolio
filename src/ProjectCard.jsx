@@ -5,7 +5,7 @@ import { SiCss3, SiTailwindcss, SiExpress, SiMongodb, SiNodedotjs, SiReact, SiRe
 function ProjectCard({dark,title,description,stack=[],applink,code,image}) {
     return (
         <div className={`${dark ? "dark" : ""} inline-block mx-auto mb-5`}>
-            <div className='flex flex-col p-4 items-center justify-evenly rounded-lg dark:text-white border-2 border-gray-600 dark:border-neutral-400 gap-y-5'>
+            <div className='flex flex-col p-4 items-center justify-evenly rounded-lg shadow-2xl dark:shadow-dark dark:text-white  gap-y-5'>
                 {/* image */}
                 <div className=' w-full rounded-lg overflow-hidden'>
                     <img src={image} alt="thumbnail" />
@@ -72,7 +72,7 @@ function ProjectCard({dark,title,description,stack=[],applink,code,image}) {
                         <div className='flex  items-center gap-x-1'><SiExpress /><span className='text-sm'>Express JS</span></div> */}
                     </div>
                     {/* links */}
-                    <div className='flex items-center justify-between gap-x-1 mt-3'>
+                    <div className='flex items-center justify-between gap-x-1 mt-3 underline'>
                         {applink ? (<><SiFirefoxbrowser /> <a href={applink} className='mr-4'>App Link</a></>) : <></>}
                         <SiGithub/> <a href={code} className=''>Source Code</a>
                     </div>

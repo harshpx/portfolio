@@ -27,6 +27,9 @@ export default {
       },
       animation: {
         'spin-slow': 'spin 10s linear infinite',
+      },
+      boxShadow:{
+        'dark':'0 4px 8px 0 rgba(80, 201, 235, 0.2), 0 6px 20px 0 rgba(80, 201, 235, 0.19);'
       }
     },
   },

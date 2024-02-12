@@ -69,6 +69,22 @@
     }
 }
 
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+@keyframes blink-caret {
+    from, to { border-color: black }
+    50% { border-color: white; }
+}
+
+.blinking-bar{
+    animation: typing 1.5s steps(30) 1 normal , blink-caret 900ms steps(1) infinite;
+}
+.blinking-bar-slowtype{
+    animation: typing 2s steps(30) 1 normal , blink-caret 900ms steps(1) infinite;
+}
+
 .bounceEff{
     animation: bounce 5s linear infinite;
 }
