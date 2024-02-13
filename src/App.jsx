@@ -1,12 +1,16 @@
 import { useEffect, useState, useRef } from 'react';
 import { Link,animateScroll } from 'react-scroll';
 import { useInView } from 'react-intersection-observer';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import emailjs from '@emailjs/browser';
 
 import {BsFillMoonStarsFill} from 'react-icons/bs';
 import { IoSunny, IoMail, IoCall } from "react-icons/io5";
 import { FcLinux } from "react-icons/fc";
 import { FaKaggle } from 'react-icons/fa';
 import {SiLeetcode, SiLinkedin, SiGithub, SiPostcss, SiPostgresql,SiHtml5,SiCss3,SiJavascript,SiReact,SiRedux,SiFramer,SiTailwindcss,SiExpress,SiSocketdotio,SiNodedotjs,SiVercel,SiPython,SiTensorflow,SiScikitlearn,SiStreamlit,SiFlask,SiAppwrite,SiFirebase,SiMysql,SiMongodb,SiGnubash} from 'react-icons/si';
+import { MdMail } from "react-icons/md";
 
 import Avatar from './assets/avatar.jpg';
 import ProjectCard from './ProjectCard';
@@ -29,6 +33,14 @@ function App() {
     useEffect(()=>{
         animateScroll.scrollTo(26);
     },[])
+
+    const autoMail = (e)=>{
+        e.preventDefault();
+        emailjs.sendForm(String(import.meta.env.VITE_EMAILJS_SERVICE_NAME),String(import.meta.env.VITE_EMAILJS_TEMPLATE_NAME),e.target,{
+            publicKey:String(import.meta.env.VITE_EMAILJS_PUBLIC_KEY)
+        }).then(()=>toast.success('Email sent successfully'))
+        .catch(()=>toast.error('Failed to send an Email'))
+    }
 
     // const { introRef, introInView} = useInView({
     //     triggerOnce: false,
@@ -106,10 +118,10 @@ function App() {
                             {/* name and profession */}
                             <div className='flex flex-col text-center sm:text-left gap-y-2'>
                                 <h1 className='text-teal-600 dark:text-teal-400 text-4xl md:text-5xl'>Harsh Priye</h1>
-                                <h2 className='dark:text-white text-base md:text-l md:font-bold p-1'>
-                                    <h1 className=' w-fit h-fit leading-5 mx-auto sm:mx-0 whitespace-nowrap overflow-hidden border-r blinking-bar'>Full Stack Web Developer</h1>
-                                    <h1 className='w-fit mx-auto sm:mx-0 leading-5 whitespace-nowrap overflow-hidden border-r blinking-bar-slowtype'>Machine Learning Enthusiast</h1>
-                                </h2>
+                                <div className='dark:text-white text-base md:text-l md:font-bold p-1'>
+                                    <h1 className=' w-fit h-fit leading-5 mx-auto sm:mx-0 whitespace-nowrap overflow-hidden blinking-bar'>Full Stack Web Developer</h1>
+                                    <h1 className='w-fit mx-auto sm:mx-0 leading-5 whitespace-nowrap overflow-hidden blinking-bar-slowtype'>Machine Learning Enthusiast</h1>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -225,17 +237,37 @@ function App() {
                 {/* contact section */}
                     
                     <section id='contact' className='min-h-screen mt-4 sm:mt-8 pt-24'>
-                        <div className='dark:text-white flex flex-col items-center justify-center '>
-                            <h1 className='text-teal-600 dark:text-teal-400 text-5xl md:text-6xl mb-48'>Contact Me</h1>
-                            <div className='flex flex-wrap justify-center items-center gap-12 sm:gap-20 md:gap-24 lg:gap-28 px-4 sm:px-8 md:px-28 lg:px-32'>
-                                <div className='flex flex-col items-center'><IoMail size={40}/> <h1 className='text-3xl text-center'>harsh.rzf@gmail.com</h1></div>
-                                <div className='flex flex-col items-center'><IoCall size={40}/> <h1 className='text-3xl text-center'>+91 8745946064</h1></div>
-
+                        <div className='dark:text-white flex flex-col items-center justify-center gap-28 sm:gap-32'>
+                            <h1 className='text-teal-600 dark:text-teal-400 text-5xl md:text-6xl'>Contact Me</h1>
+                            <div className='flex flex-wrap justify-center items-center gap-8 sm:gap-20 md:gap-24 lg:gap-28 px-4 sm:px-8 md:px-28 lg:px-32'>
+                                <div className='flex flex-col items-center'><IoMail size={40} className='text-teal-600 dark:text-teal-400'/>
+                                    <h1 className='text-3xl text-center'>harsh.rzf@gmail.com</h1>
+                                </div>
+                                <div className='flex flex-col items-center'><IoCall size={40} className='text-teal-600 dark:text-teal-400'/>
+                                    <h1 className='text-3xl text-center'>+91 8745946064</h1>
+                                </div>
                             </div>
+                            <div className='flex flex-col items-center gap-5 sm:gap-6'>
+                                <h1 className='text-4xl text-center'>Or start an email thread...</h1>
+                                <form onSubmit={autoMail} className='flex flex-col justify-start items-center gap-3'>
+                                    <div className='flex gap-x-4 items-center text-xl'>
+                                        <label htmlFor="name"> Name:</label>
+                                        <input type="text" name="to_name" id="name" className='leading-8 rounded-lg px-2 bg-transparent placeholder:text-base border-2 border-gray-500 dark:border-gray-400 focus:border-teal-600 focus:dark:border-teal-400 focus:outline-none focus:ring-0' placeholder='Your name'/>
+                                    </div>
+                                    <div className='flex gap-x-4 items-center text-xl'>
+                                        <label htmlFor="email"> Email:</label>
+                                        <input type="text" name="to_email" id="email" className='leading-8 rounded-lg px-2 bg-transparent placeholder:text-base  border-2 border-gray-500 dark:border-gray-400 focus:border-teal-600 focus:dark:border-teal-400 focus:outline-none focus:ring-0' placeholder='someone@example.com'/>
+                                    </div>
+                                    <button type="submit" className='flex items-center justify-evenly rounded-lg py-1 px-1.5 bg-teal-500 gap-2 my-2 text-sm sm:text-base'><MdMail size={20}/>Get a Mail!</button>
+                                </form>
+                            </div>
+
+
                         </div>
                     </section>
                     
             </div>
+            <ToastContainer autoClose={5000} theme={`${darkMode ? 'dark' : 'light'}`}/>
         </div>
     )
 }
