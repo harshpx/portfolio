@@ -78,6 +78,66 @@
     50% { border-color: white; }
 }
 
+@keyframes slide-in{
+    from{
+        opacity: 0;
+        translate: -30px;
+    }
+    to{
+        opacity: 1;
+        translate: 0;
+    }
+}
+
+@keyframes slide-right{
+    from{
+        opacity: 0;
+        translate: 30px;
+    }
+    to{
+        opacity: 1;
+        translate: 0;
+    }
+}
+
+@keyframes slide-top{
+    from{
+        opacity: 0;
+        translate: 0 -30px;
+    }
+    to{
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+
+@keyframes slide-bottom{
+    from{
+        opacity: 0;
+        translate: 0 30px;
+    }
+    to{
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+
+.slide{
+    animation: slide-in 1.5s linear 1 normal;
+}
+
+.slide-top{
+    animation: slide-top 1.5s linear 1 normal;
+}
+
+.slide-bottom{
+    animation: slide-bottom 1.5s linear 1 normal;
+}
+
+.slide-right{
+    animation: slide-right 1.5s linear 1 normal;
+}
+
 .blinking-bar{
     animation: typing 1.2s steps(30) 1 normal;
 }

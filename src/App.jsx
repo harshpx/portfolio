@@ -110,17 +110,17 @@ function App() {
                         <div className='flex flex-col gap-y-3'>
                             {/* profile links */}
                             <div className='dark:text-white flex justify-center sm:justify-start gap-x-5 text-2xl'>
-                                <a href="https://github.com/harshpx"><SiGithub /></a>
-                                <a href="https://www.linkedin.com/in/harshpx/"><SiLinkedin /></a>
-                                <a href="https://leetcode.com/harsh_px/"><SiLeetcode /></a>
-                                <a href="https://www.kaggle.com/harshpriye"><FaKaggle /></a>
+                                <a href="https://github.com/harshpx" className='slide'><SiGithub /></a>
+                                <a href="https://www.linkedin.com/in/harshpx/" className='slide-top'><SiLinkedin /></a>
+                                <a href="https://leetcode.com/harsh_px/" className='slide-bottom'><SiLeetcode /></a>
+                                <a href="https://www.kaggle.com/harshpriye" className='slide-right'><FaKaggle /></a>
                             </div>
                             {/* name and profession */}
                             <div className='flex flex-col text-center sm:text-left gap-y-2'>
-                                <h1 className='text-teal-600 dark:text-teal-400 text-4xl md:text-5xl'>Harsh Priye</h1>
+                                <h1 className='text-teal-600 dark:text-teal-400 text-4xl md:text-5xl slide'>Harsh Priye</h1>
                                 <div className='dark:text-white text-base md:text-l md:font-bold p-1'>
-                                    <h1 className=' w-fit h-fit leading-5 mx-auto sm:mx-0 whitespace-nowrap overflow-hidden blinking-bar'>Full Stack Web Developer</h1>
-                                    <h1 className='w-fit mx-auto sm:mx-0 leading-5 whitespace-nowrap overflow-hidden blinking-bar-slowtype'>Machine Learning Enthusiast</h1>
+                                    <h1 className=' w-fit h-fit leading-5 mx-auto sm:mx-0 whitespace-nowrap overflow-hidden slide'>Full Stack Web Developer</h1>
+                                    <h1 className='w-fit mx-auto sm:mx-0 leading-5 whitespace-nowrap overflow-hidden slide'>Machine Learning Enthusiast</h1>
                                 </div>
                             </div>
                         </div>
