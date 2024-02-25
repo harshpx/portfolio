@@ -9,7 +9,7 @@ import {BsFillMoonStarsFill} from 'react-icons/bs';
 import { IoSunny, IoMail, IoCall } from "react-icons/io5";
 import { FcLinux } from "react-icons/fc";
 import { FaKaggle } from 'react-icons/fa';
-import {SiLeetcode, SiLinkedin, SiGithub, SiPostcss, SiPostgresql,SiHtml5,SiCss3,SiJavascript,SiReact,SiRedux,SiFramer,SiTailwindcss,SiExpress,SiSocketdotio,SiNodedotjs,SiVercel,SiPython,SiTensorflow,SiScikitlearn,SiStreamlit,SiFlask,SiAppwrite,SiFirebase,SiMysql,SiMongodb,SiGnubash} from 'react-icons/si';
+import {SiLeetcode, SiLinkedin, SiGithub, SiPostcss, SiPostgresql,SiHtml5,SiCss3,SiJavascript,SiReact,SiRedux,SiFramer,SiTailwindcss,SiExpress,SiSocketdotio,SiNodedotjs,SiVercel,SiPython,SiTensorflow,SiScikitlearn,SiStreamlit,SiFlask,SiAppwrite,SiFirebase,SiMysql,SiMongodb,SiGnubash,SiHeroku} from 'react-icons/si';
 import { MdMail } from "react-icons/md";
 
 import Avatar from './assets/avatar.jpg';
@@ -20,6 +20,7 @@ import MiniBlogImg from './assets/icons/miniblog.png';
 import TealFoxImg from './assets/icons/tealfox.png';
 import DogBreedPred from './assets/icons/dogBreedPred1.png';
 import VAR from './assets/icons/var.png';
+import TTT from './assets/icons/tic-tac-toe.png'
 
 import CodeLogo from './assets/icons/code_logo.png';
 import CodeLogoLight from './assets/icons/code_logo_light.png';
@@ -29,43 +30,21 @@ import DesignLogo from './assets/icons/design_logo.png';
 
 function App() {
     const [darkMode,setDarkMode] = useState(true);
+    const [wait,setWait] = useState(false)
 
     useEffect(()=>{
         animateScroll.scrollTo(26);
     },[])
 
     const autoMail = (e)=>{
+        setWait(true);
         e.preventDefault();
         emailjs.sendForm(String(import.meta.env.VITE_EMAILJS_SERVICE_NAME),String(import.meta.env.VITE_EMAILJS_TEMPLATE_NAME),e.target,{
             publicKey:String(import.meta.env.VITE_EMAILJS_PUBLIC_KEY)
         }).then(()=>toast.success('Email sent successfully'))
         .catch(()=>toast.error('Failed to send an Email'))
+        .finally(()=>setWait(false));
     }
-
-    // const { introRef, introInView} = useInView({
-    //     triggerOnce: false,
-    //     rootMargin: '-100px 100px',
-    // });
-
-    // const { projectRef, projectInView } = useInView({
-    //     triggerOnce: false,
-    //     rootMargin: '-100px 100px',
-    // });
-
-    // const { serviceRef, serviceInView } = useInView({
-    //     triggerOnce: false,
-    //     rootMargin: '-100px 100px',
-    // });
-
-    // const { stackRef, stackInView } = useInView({
-    //     triggerOnce: false,
-    //     rootMargin: '-100px 100px',
-    // });
-
-    // const { contactRef, contactInView } = useInView({
-    //     triggerOnce: false,
-    //     rootMargin: '-100px 100px',
-    // });
 
 
     return (
@@ -103,7 +82,7 @@ function App() {
                     {/* intro */}
                     <div className={`flex flex-col sm:flex-row sm:justify-center gap-y-7 sm:gap-x-5 items-center pt-32 sm:pt-44`}>
                         {/* image */}
-                        <div className=' w-48 sm:w-52 md:w-56 overflow-hidden' style={{animation: 'movingEllipse 7s linear infinite normal'}}>
+                        <div className=' w-48 sm:w-52 md:w-56 overflow-hidden rounded-full'>
                             <img src={Avatar} alt="Profile Picture"/>
                         </div>
                         {/* name and information */}
@@ -141,6 +120,8 @@ function App() {
                                     <ProjectCard dark={darkMode} title="Memoize Notes" description="A Full Stack, industry standard Notes App" image={MemoizeImg} stack={['react','tailwind','redux','express','node','mongodb']} applink='https://memoize-notes.vercel.app/' code='https://github.com/harshpx/memoize' />
 
                                     <ProjectCard dark={darkMode} title="MiniBlog" description="Micro-Blogging App" image={MiniBlogImg} stack={['react','redux','tailwind','appwrite']} applink='https://miniblogger.vercel.app/' code='https://github.com/harshpx/miniBlog' />
+
+                                    <ProjectCard dark={darkMode} title="Mini Tic-Tac-Toe" description="A Multiplayer Tic-Tac-Toe Game, with In-Game Chat Feature." image={TTT} stack={['react','socket','express','tailwind']} applink='https://mini-tic-tac-toe.vercel.app/' code='https://github.com/harshpx/tic-tac-toe-socket' />
 
                                     <ProjectCard dark={darkMode} title="TealFox" description="UserStyle CSS custom theme for Firefox" image={TealFoxImg} stack={['css']} code='https://github.com/harshpx/TealFox' />
 
@@ -225,6 +206,7 @@ function App() {
                                 <SiScikitlearn className='size-20 sm:size-24 md:size-26 lg:size-32 hover:scale-110 transition-all duration-200'/>
                                 <SiStreamlit className='size-20 sm:size-24 md:size-26 lg:size-32 hover:scale-110 transition-all duration-200 text-red-500'/>
                                 <SiFlask className='size-20 sm:size-24 md:size-26 lg:size-32 hover:scale-110 transition-all duration-200'/>
+                                <SiHeroku className='size-20 sm:size-24 md:size-26 lg:size-32 hover:scale-110 transition-all duration-200 text-purple-500'/>
                                 <SiVercel className='size-20 sm:size-24 md:size-26 lg:size-32 hover:scale-110 transition-all duration-200 text-gray-700'/>
                                 <SiFirebase className='size-20 sm:size-24 md:size-26 lg:size-32 hover:scale-110 transition-all duration-200 text-yellow-500'/>
                                 <SiAppwrite className='size-20 sm:size-24 md:size-26 lg:size-32 hover:scale-110 transition-all duration-200 text-pink-400'/>
@@ -249,7 +231,7 @@ function App() {
                             </div>
                             <div className='flex flex-col items-center gap-5 sm:gap-6'>
                                 <h1 className='text-4xl text-center'>Or start an email thread...</h1>
-                                <form onSubmit={autoMail} className='flex flex-col justify-start items-center gap-3'>
+                                <form onSubmit={wait ? ()=>{} : autoMail} className='flex flex-col justify-start items-center gap-3'>
                                     <div className='flex gap-x-4 items-center text-xl'>
                                         <label htmlFor="name"> Name:</label>
                                         <input type="text" name="to_name" id="name" className='leading-8 rounded-lg px-2 bg-transparent placeholder:text-base border-2 border-gray-500 dark:border-gray-400 focus:border-teal-600 focus:dark:border-teal-400 focus:outline-none focus:ring-0' placeholder='Your name'/>
@@ -258,8 +240,14 @@ function App() {
                                         <label htmlFor="email"> Email:</label>
                                         <input type="text" name="to_email" id="email" className='leading-8 rounded-lg px-2 bg-transparent placeholder:text-base  border-2 border-gray-500 dark:border-gray-400 focus:border-teal-600 focus:dark:border-teal-400 focus:outline-none focus:ring-0' placeholder='someone@example.com'/>
                                     </div>
-                                    <button type="submit" className='flex items-center justify-evenly rounded-lg py-1 px-1.5 bg-teal-500 gap-2 my-2 text-sm sm:text-base'><MdMail size={20}/>Get a Mail!</button>
+                                    <div className='flex flex-col items-center'>
+                                        <div className={`${!wait ? "hidden" : ""}`}>Sending...</div>
+                                        <button type="submit" className='flex items-center justify-evenly rounded-lg py-1 px-1.5 bg-teal-500 gap-2 my-2 text-sm sm:text-base hover:scale-125 duration-150'><MdMail size={20}/>Get a Mail!</button>
+                                        
+                                    </div>
+                                    
                                 </form>
+
                             </div>
 
 

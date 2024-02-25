@@ -1,5 +1,5 @@
 import React from 'react';;
-import { SiCss3, SiTailwindcss, SiExpress, SiMongodb, SiNodedotjs, SiReact, SiRedux, SiGithub, SiFirefoxbrowser, SiTensorflow, SiScikitlearn, SiPython, SiStreamlit, SiFlask, SiAppwrite, SiOpencv} from "react-icons/si";
+import { SiCss3, SiTailwindcss, SiExpress, SiMongodb, SiNodedotjs, SiReact, SiRedux, SiGithub, SiFirefoxbrowser, SiTensorflow, SiScikitlearn, SiPython, SiStreamlit, SiFlask, SiAppwrite, SiOpencv, SiSocketdotio} from "react-icons/si";
 
 
 function ProjectCard({dark,title,description,stack=[],applink,code,image}) {
@@ -63,6 +63,9 @@ function ProjectCard({dark,title,description,stack=[],applink,code,image}) {
                             }
                             if(tech=='opencv'){
                                 return (<div key={tech} className='flex  items-center gap-x-1'><SiOpencv /><span className='text-sm'>OpenCV</span></div>)
+                            }
+                            if(tech=='socket'){
+                                return (<div key={tech} className='flex  items-center gap-x-1'><SiSocketdotio /><span className='text-sm'>Socket.io</span></div>)
                             }
 
                         })}
