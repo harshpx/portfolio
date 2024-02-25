@@ -11,7 +11,7 @@ const Root = () => {
             animate={{y:'0%'}}
             exit={{y:'-20%'}}
             transition={{duration:0.5}}
-            className='fixed top-0 w-full min-h-screen'
+            className='absolute w-full min-h-screen'
             >
                 <Outlet/>
             </motion.div>
