@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { NavLink } from 'react-router-dom';
 import {useSelector, useDispatch} from 'react-redux';
 import { changeTheme } from '../state/themeSlice';
+import { Link } from 'react-scroll';
 
 import {BsFillMoonStarsFill} from 'react-icons/bs';
-import { IoSunny, IoMail, IoCall } from "react-icons/io5";
+import { IoSunny } from "react-icons/io5";
 
 const Header = () => {
     const {darkMode} = useSelector(state=>state.theme);
@@ -17,11 +17,11 @@ const Header = () => {
                     {/* links */}
                     <div className='flex flex-wrap gap-x-5 text-l text-black dark:text-white'>
 
-                        <NavLink to='/'>About Me</NavLink>
-                        <NavLink to='/projects'>Projects</NavLink>
-                        <NavLink to='/services'>Services</NavLink>
-                        <NavLink to='/stack'>Tech Stack</NavLink>
-                        <NavLink to='/contact'>Contact Me</NavLink>
+                        <Link to='about' spy={true} smooth={true} offset={0} duration={500} activeClass='active' className='hover:underline cursor-pointer'>About Me</Link>
+                        <Link to='projects' spy={true} smooth={true} offset={10} duration={500} activeClass='active' className='hover:underline cursor-pointer'>Projects</Link>
+                        <Link to='services' spy={true} smooth={true} offset={10} duration={500} activeClass='active' className='hover:underline cursor-pointer'>Services</Link>
+                        <Link to='stack' spy={true} smooth={true} offset={-5} duration={500} activeClass='active' className='hover:underline cursor-pointer'>Tech Stack</Link>
+                        <Link to='contact' spy={true} smooth={true} offset={-10} duration={500} activeClass='active' className='hover:underline cursor-pointer'>Connect</Link>
 
                     </div>
                     {/* theme switch button */}

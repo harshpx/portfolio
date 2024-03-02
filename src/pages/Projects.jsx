@@ -21,7 +21,7 @@ const Projects = () => {
     return (
     <div className={`${darkMode ? 'dark' : ''}`}>
         <div className='bg-neutral-200 dark:bg-slate-900 px-5 sm:px-10 md:px-15 lg:px-25 xl:px-30 font-segoeUI transition-all duration-300'>
-            <section id='projects' className={`min-h-screen mt-4 sm:mt-8 pt-12`}>
+            <section id='projects' className={`min-h-screen  py-20`}>
                 <div  className='dark:text-white flex flex-col items-center justify-center '>
                     <h1 className={`transition-all text-teal-600 dark:text-teal-400 text-5xl md:text-6xl mb-10`}>{`Projects`}</h1>
                     <div className='flex flex-wrap items-end justify-center gap-3 xl:w-10/12'>
