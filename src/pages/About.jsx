@@ -34,7 +34,7 @@ const About = () => {
                         {/* name and profession */}
                         <div className='flex flex-col text-center sm:text-left gap-y-2'>
                             <h1 className='text-teal-600 dark:text-teal-400 text-4xl md:text-5xl slide'>Harsh Priye</h1>
-                            <div className='dark:text-white text-base md:text-l md:font-bold p-1'>
+                            <div className='dark:text-white text-base md:text-l p-1'>
                                 <h1 className=' w-fit h-fit leading-5 mx-auto sm:mx-0 whitespace-nowrap overflow-hidden slide'>Full Stack Web Developer</h1>
                                 <h1 className='w-fit mx-auto sm:mx-0 leading-5 whitespace-nowrap overflow-hidden slide'>Machine Learning Enthusiast</h1>
                             </div>
@@ -42,7 +42,7 @@ const About = () => {
                     </div>
                 </div>
                 {/* about me */}
-                <div className='dark:text-white mt-20 text-center sm:text-l md:text-[18px] font-bold'>
+                <div className='dark:text-white mt-20 text-center sm:text-l md:text-[18px]'>
                     <p><span className='text-teal-600 dark:text-teal-400'>Hello and welcome!</span> I'm thrilled to have you here.<br/>I am Harsh, a Full-Stack Web-Developer, particularly specializing in the <span className='text-green-600 dark:text-green-400'>M</span><span className='text-yellow-600 dark:text-yellow-400'>E</span><span className='text-teal-600 dark:text-teal-400'>R</span><span className='text-green-600 dark:text-green-400'>N</span> (MongoDB, Express JS, React JS, Node JS) stack.<br/>Also a Machine Learning Enthusiast, proficient in <span className='text-yellow-600 dark:text-yellow-400'>Python</span>, <span className='text-blue-500 dark:text-blue-300'>Scikit-Learn</span> and <span className='text-orange-600 dark:text-orange-400'>TensorFlow</span> stack.</p>
                 </div>
             </section>
