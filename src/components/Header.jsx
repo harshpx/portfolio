@@ -13,9 +13,9 @@ const Header = () => {
     return (
         <div className={`${darkMode ? 'dark' : ''}`}>
             <div className='w-full fixed top-0 left-0 bg-neutral-200 dark:bg-slate-900 px-5 sm:px-10 md:px-15 lg:px-25 xl:px-30 font-segoeUI transition-all duration-300 z-10'>
-                <nav className="py-2 flex justify-between items-center text-center text-sm sm:text-base">
+                <nav className="py-2 flex gap-4 justify-between items-center text-center text-sm sm:text-base">
                     {/* links */}
-                    <div className='flex flex-wrap gap-x-5 text-l text-black dark:text-white'>
+                    <div className='flex flex-wrap items-center justify-start gap-x-5 text-l text-black dark:text-white'>
 
                         <Link to='about' spy={true} smooth={true} offset={0} duration={500} activeClass='active' className='hover:underline cursor-pointer'>About Me</Link>
                         <Link to='projects' spy={true} smooth={true} offset={10} duration={500} activeClass='active' className='hover:underline cursor-pointer'>Projects</Link>
@@ -24,9 +24,13 @@ const Header = () => {
                         <Link to='contact' spy={true} smooth={true} offset={-10} duration={500} activeClass='active' className='hover:underline cursor-pointer'>Connect</Link>
 
                     </div>
-                    {/* theme switch button */}
-                    <div className='cursor-pointer text-2xl rounded-full p-1.5 text-teal-600 dark:text-teal-400 hover:text-teal-400 dark:hover:text-teal-600 hover:bg-black dark:hover:bg-neutral-200' onClick={()=>dispatch(changeTheme())}>
-                        {darkMode ? <IoSunny /> : <BsFillMoonStarsFill/>}
+                    <div className='flex gap-2 items-center justify-evenly'>
+                        {/* resume button */}
+                        <a href="https://drive.google.com/file/d/1eUOJdrXZFkVb_KFxfEZjSGs1bGpIlzQB/view?usp=sharing" className='cursor-pointer text-white dark:text-white px-2 py-1 rounded-lg bg-teal-600 hover:scale-110 duration-150'>Resume</a>
+                        {/* theme switch button */}
+                        <div className='cursor-pointer text-2xl rounded-full p-1.5 text-teal-600 dark:text-teal-400 hover:text-teal-400 dark:hover:text-teal-600 hover:bg-black dark:hover:bg-neutral-200' onClick={()=>dispatch(changeTheme())}>
+                            {darkMode ? <IoSunny /> : <BsFillMoonStarsFill/>}
+                        </div>
                     </div>
                 </nav>
             </div>

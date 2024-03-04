@@ -15,7 +15,7 @@ const About = () => {
   return (
     <div className={`${darkMode ? "dark" : ""}`}>
         <div className='bg-neutral-200 dark:bg-slate-900 px-5 sm:px-10 md:px-15 lg:px-25 xl:px-30 font-segoeUI transition-all duration-300'>
-            <section id='about' className={`min-h-screen`}>
+            <section id='about' className={`min-h-screen flex flex-col items-center`}>
                 {/* intro */}
                 <div className={`flex flex-col sm:flex-row sm:justify-center gap-y-7 sm:gap-x-5 items-center pt-32 sm:pt-44`}>
                     {/* image */}
@@ -42,7 +42,7 @@ const About = () => {
                     </div>
                 </div>
                 {/* about me */}
-                <div className='dark:text-white mt-20 text-center sm:text-l md:text-[18px]'>
+                <div className='dark:text-white mt-20 text-center sm:text-l md:text-[18px] w-full md:w-1/2'>
                     <p><span className='text-teal-600 dark:text-teal-400'>Hello and welcome!</span> I'm thrilled to have you here.<br/>I am Harsh, a Full-Stack Web-Developer, particularly specializing in the <span className='text-green-600 dark:text-green-400'>M</span><span className='text-yellow-600 dark:text-yellow-400'>E</span><span className='text-teal-600 dark:text-teal-400'>R</span><span className='text-green-600 dark:text-green-400'>N</span> (MongoDB, Express JS, React JS, Node JS) stack.<br/>Also a Machine Learning Enthusiast, proficient in <span className='text-yellow-600 dark:text-yellow-400'>Python</span>, <span className='text-blue-500 dark:text-blue-300'>Scikit-Learn</span> and <span className='text-orange-600 dark:text-orange-400'>TensorFlow</span> stack.</p>
                 </div>
             </section>
