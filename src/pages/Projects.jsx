@@ -6,9 +6,11 @@ import ProjectCard from '../components/ProjectCard.jsx';
 import MemoizeImg from '../assets/icons/memoize3.png';
 import MiniBlogImg from '../assets/icons/miniblog.png';
 import TealFoxImg from '../assets/icons/tealfox.png';
-import DogBreedPred from '../assets/icons/dogBreedPred1.png';
+import DogBreedPred from '../assets/icons/dog-breed1.png';
 import VAR from '../assets/icons/var.png';
 import TTT from '../assets/icons/tic-tac-toe.png'
+import MLAPI from '../assets/icons/ml-api.png';
+import Comments from '../assets/icons/comments.png';
 
 
 
@@ -36,8 +38,11 @@ const Projects = () => {
 
                                 <ProjectCard dark={darkMode} title="TealFox" description="UserStyle CSS custom theme for Firefox" image={TealFoxImg} stack={['css']} code='https://github.com/harshpx/TealFox' />
 
-                                <ProjectCard dark={darkMode} title="Dog Breed Identifier" description="A CNN based Deep-Learning Image Classification Model for Dog Breed Identification" image={DogBreedPred} stack={['python','tensorflow','streamlit']} applink='https://dog-breed-identify.streamlit.app/' code='https://github.com/harshpx/Dog-Breed-Identifier' />
+                                <ProjectCard dark={darkMode} title="Comments" description="A three-level, Reusable comment section component made using React JS and Tailwind CSS " image={Comments} stack={['react','tailwind']} applink='https://commentbox.vercel.app' code='https://github.com/harshpx/comments-project' />
 
+                                <ProjectCard dark={darkMode} title="Dog Breed Identifier" description="A CNN based Deep-Learning Image Classification Model for Dog Breed Identification with React frontend and FastAPI server" image={DogBreedPred} stack={['react','tailwind','css','python','fastapi','tensorflow']} applink='https://dog-breed-identifier-client.vercel.app/' code='https://github.com/harshpx/Dog-Breed-Identifier-client' />
+
+                                <ProjectCard dark={darkMode} title="ml-api" description="Master API for all my Machine Learning/Deep Learning models" image={MLAPI} stack={['python','fastapi','tensorflow','opencv']} applink="https://mlapi.online" code='https://github.com/harshpx/ml-api' />
 
                                 <ProjectCard dark={darkMode} title="Virtual Assistant Referee" description="A CNN Based Deep-Learning Video Analysis Model for Player Contact Detection in Football" image={VAR} stack={['python','opencv','tensorflow','streamlit']} applink='https://virtual-assistant-referee.streamlit.app/' code='https://github.com/harshpx/Virtual-Assistant-Referee' />
 
