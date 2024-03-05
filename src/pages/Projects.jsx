@@ -26,7 +26,7 @@ const Projects = () => {
             <section id='projects' className={`min-h-screen  py-20`}>
                 <div  className='dark:text-white flex flex-col items-center justify-center '>
                     <h1 className={`transition-all text-teal-600 dark:text-teal-400 text-5xl md:text-6xl mb-10`}>{`Projects`}</h1>
-                    <div className='flex flex-wrap items-end justify-center gap-3 xl:w-10/12'>
+                    <div className='flex flex-wrap items-end justify-center gap-3 sm:w-11/12 xl:w-10/12'>
                             <div className='columns-1 sm:columns-2 gap-5'>
 
                                 <ProjectCard dark={darkMode} title="Memoize Notes" description="A Full Stack, industry standard Notes App" image={MemoizeImg} stack={['react','tailwind','redux','express','node','mongodb']} applink='https://memoize-notes.vercel.app/' code='https://github.com/harshpx/memoize' />

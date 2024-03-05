@@ -158,3 +158,8 @@
     text-decoration: underline;
     text-decoration-color: rgb(26, 157, 157);
 }
+
+.act{
+    background-color: rgb(54, 169, 169);
+    color: white;
+}
