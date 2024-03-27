@@ -44,8 +44,8 @@ const Header = () => {
 
     return (
         <div className={`${darkMode ? 'dark' : ''}`}>
-            <div className='w-full fixed top-0 left-0 bg-neutral-200 dark:bg-slate-900 px-5 sm:px-10 md:px-15 lg:px-25 xl:px-30 font-segoeUI transition-all duration-300 z-10'>
-                <nav className="py-2 flex flex-row-reverse gap-4 justify-between items-center text-center text-sm sm:text-base">
+            <div className='w-full fixed top-0 left-0 bg-neutral-200 dark:bg-slate-900 px-2 sm:px-10 md:px-15 lg:px-25 xl:px-30 font-segoeUI transition-all duration-300 z-10'>
+                <nav className={`${expand && width<640 ? "h-28" : ""} ${!expand && width<640 ? "h-10" : ""} transition-all duration-150 py-2 flex flex-row-reverse gap-4 justify-between items-center text-center text-sm sm:text-base`}>
                     
                     {/* theme switch and resume button */}
                     <div className='flex gap-2 items-center justify-evenly'>
@@ -59,35 +59,35 @@ const Header = () => {
 
                     {/* links */}
                     {width<640 ? <>
-                        <div className={`flex flex-wrap items-center justify-start gap-1 text-l text-black dark:text-white`}>
+                        <div className={`flex flex-wrap items-center justify-start gap-1 text-black dark:text-white`}>
 
-                            <Link to='about' spy={true} smooth={true} offset={0} duration={500} activeClass='act' className={`rounded-lg flex items-center ${!expand ? "justify-center w-10 h-8" : "justify-start h-8 px-1"} cursor-pointer gap-2 hover:bg-neutral-300/20`}>
+                            <Link to='about' spy={true} smooth={true} offset={0} duration={500} activeClass='act' className={`rounded-lg flex items-center ${!expand ? "justify-center w-8 h-8" : "justify-start h-8 px-1"} cursor-pointer gap-2`}>
                                 <FaUserCircle size={20}/>
                                 <h1 className={`${!expand ? "hidden" : ""}`}>About Me</h1>
                             </Link>
-                            <Link to='projects' spy={true} smooth={true} offset={10} duration={500} activeClass='act' className={`rounded-lg  flex items-center ${!expand ? "justify-center w-10 h-8" : "justify-start h-8 px-1"} cursor-pointer gap-2 hover:bg-neutral-300/20`}>
+                            <Link to='projects' spy={true} smooth={true} offset={10} duration={500} activeClass='act' className={`rounded-lg  flex items-center ${!expand ? "justify-center w-8 h-8" : "justify-start h-8 px-1"} cursor-pointer gap-2`}>
                                 <FaCode size={20}/>
                                 <h1 className={`${!expand ? "hidden" : ""}`}>Projects</h1>
                             </Link>
-                            <Link to='services' spy={true} smooth={true} offset={10} duration={500} activeClass='act' className={`rounded-lg  flex items-center ${!expand ? "justify-center w-10 h-8" : "justify-start h-8 px-1"} cursor-pointer gap-2 hover:bg-neutral-300/20`}>
+                            <Link to='services' spy={true} smooth={true} offset={10} duration={500} activeClass='act' className={`rounded-lg  flex items-center ${!expand ? "justify-center w-8 h-8" : "justify-start h-8 px-1"} cursor-pointer gap-2`}>
                                 <MdDesignServices size={20}/>
                                 <h1 className={`${!expand ? "hidden" : ""}`}>Services</h1>
                             </Link>
-                            <Link to='stack' spy={true} smooth={true} offset={0} duration={500} activeClass='act' className={`rounded-lg  flex items-center ${!expand ? "justify-center w-10 h-8" : "justify-start h-8 px-1"} cursor-pointer gap-2 hover:bg-neutral-300/20`}>
+                            <Link to='stack' spy={true} smooth={true} offset={0} duration={500} activeClass='act' className={`rounded-lg  flex items-center ${!expand ? "justify-center w-8 h-8" : "justify-start h-8 px-1"} cursor-pointer gap-2`}>
                                 <FaReact size={20}/>
                                 <h1 className={`${!expand ? "hidden" : ""}`}>Tech Stack</h1>
                             </Link>
-                            <Link to='contact' spy={true} smooth={true} offset={0} duration={500} activeClass='act' className={`rounded-lg  flex items-center ${!expand ? "justify-center w-10 h-8" : "justify-start h-8 px-1"} cursor-pointer gap-2 hover:bg-neutral-300/20`}>
+                            <Link to='contact' spy={true} smooth={true} offset={0} duration={500} activeClass='act' className={`rounded-lg  flex items-center ${!expand ? "justify-center w-8 h-8" : "justify-start h-8 px-1"} cursor-pointer gap-2`}>
                                 <IoIosMail size={20}/>
                                 <h1 className={`${!expand ? "hidden" : ""}`}>Contact</h1>
                             </Link>
 
-                            {/* <button className={`rounded-lg  flex items-center ${!expand ? "w-16 h-8" : "w-16 h-8"} justify-center cursor-pointer gap-2 hover:bg-neutral-300/20`}>
+                            {/* <button className={`rounded-lg  flex items-center ${!expand ? "w-16 h-8" : "w-16 h-8"} justify-center cursor-pointer gap-2`}>
                                 <PiHeartStraightLight size={20}/>
                                 <h1>125</h1>
                             </button> */}
 
-                            <button className={`rounded-lg  flex items-center ${!expand ? "w-10 h-8" : "w-10 h-8"} justify-center cursor-pointer gap-2 hover:bg-neutral-300/20`} onClick={()=>setExpand(prev=>!prev)}>
+                            <button className={`rounded-lg  flex items-center ${!expand ? "w-8 h-8" : "w-8 h-8"} justify-center cursor-pointer gap-2`} onClick={()=>setExpand(prev=>!prev)}>
                                 {expand ? <IoChevronUp/> : <IoChevronDown/>}
                             </button>
 
@@ -103,23 +103,23 @@ const Header = () => {
                         </button>
 
                         <div className={`w-full mx-auto flex flex-col gap-2 justify-center items-center`}>
-                            <Link to='about' spy={true} smooth={true} offset={0} duration={500} activeClass='act' className={`rounded-lg w-11/12 h-9 px-3 flex items-center ${!expand ? "justify-center" : "justify-start"} cursor-pointer gap-2 hover:bg-neutral-300/20`}>
+                            <Link to='about' spy={true} smooth={true} offset={0} duration={500} activeClass='act' className={`rounded-lg w-11/12 h-9 px-3 flex items-center ${!expand ? "justify-center" : "justify-start"} cursor-pointer gap-2`}>
                                 <FaUser/>
                                 <h1 className={`${!expand ? "hidden" : ""}`}>About Me</h1>
                             </Link>
-                            <Link to='projects' spy={true} smooth={true} offset={10} duration={500} activeClass='act' className={`rounded-lg w-11/12 h-9  px-3 flex items-center ${!expand ? "justify-center" : "justify-start"} cursor-pointer gap-2 hover:bg-neutral-300/20`}>
+                            <Link to='projects' spy={true} smooth={true} offset={10} duration={500} activeClass='act' className={`rounded-lg w-11/12 h-9  px-3 flex items-center ${!expand ? "justify-center" : "justify-start"} cursor-pointer gap-2`}>
                                 <FaCode/>
                                 <h1 className={`${!expand ? "hidden" : ""}`}>Projects</h1>
                             </Link>
-                            <Link to='services' spy={true} smooth={true} offset={10} duration={500} activeClass='act' className={`rounded-lg w-11/12 h-9  px-3 flex items-center ${!expand ? "justify-center" : "justify-start"} cursor-pointer gap-2 hover:bg-neutral-300/20`}>
+                            <Link to='services' spy={true} smooth={true} offset={10} duration={500} activeClass='act' className={`rounded-lg w-11/12 h-9  px-3 flex items-center ${!expand ? "justify-center" : "justify-start"} cursor-pointer gap-2`}>
                                 <MdDesignServices/>
                                 <h1 className={`${!expand ? "hidden" : ""}`}>Services</h1>
                             </Link>
-                            <Link to='stack' spy={true} smooth={true} offset={0} duration={500} activeClass='act' className={`rounded-lg w-11/12 h-9  px-3 flex items-center ${!expand ? "justify-center" : "justify-start"} cursor-pointer gap-2 hover:bg-neutral-300/20`}>
+                            <Link to='stack' spy={true} smooth={true} offset={0} duration={500} activeClass='act' className={`rounded-lg w-11/12 h-9  px-3 flex items-center ${!expand ? "justify-center" : "justify-start"} cursor-pointer gap-2`}>
                                 <FaReact/>
                                 <h1 className={`${!expand ? "hidden" : ""}`}>Tech Stack</h1>
                             </Link>
-                            <Link to='contact' spy={true} smooth={true} offset={0} duration={500} activeClass='act' className={`rounded-lg w-11/12 h-9  px-3 flex items-center ${!expand ? "justify-center" : "justify-start"} cursor-pointer gap-2 hover:bg-neutral-300/20`}>
+                            <Link to='contact' spy={true} smooth={true} offset={0} duration={500} activeClass='act' className={`rounded-lg w-11/12 h-9  px-3 flex items-center ${!expand ? "justify-center" : "justify-start"} cursor-pointer gap-2`}>
                                 <IoIosMail/>
                                 <h1 className={`${!expand ? "hidden" : ""}`}>Contact</h1>
                             </Link>
