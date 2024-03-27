@@ -44,7 +44,7 @@ const Header = () => {
 
     return (
         <div className={`${darkMode ? 'dark' : ''}`}>
-            <div className='w-full fixed top-0 left-0 bg-neutral-200 dark:bg-slate-900 px-2 sm:px-10 md:px-15 lg:px-25 xl:px-30 font-segoeUI transition-all duration-300 z-10'>
+            <div className='w-full fixed top-0 left-0 bg-neutral-200 dark:bg-slate-900 px-2 sm:px-10 md:px-15 lg:px-25 xl:px-30 font-segoeUI transition-all duration-300 z-10' ref={ref}>
                 <nav className={`${expand && width<640 ? "h-28" : ""} ${!expand && width<640 ? "h-10" : ""} transition-all duration-150 py-2 flex flex-row-reverse gap-4 justify-between items-center text-center text-sm sm:text-base`}>
                     
                     {/* theme switch and resume button */}
@@ -96,7 +96,7 @@ const Header = () => {
                 </nav>
                 {/* sidebar */}
                 {width>640 ? <>
-                    <div className={`${!expand ? "w-12" : "w-40"} duration-150 h-dvh absolute left-0 top-0 py-4 px-1 bg-neutral-400/20 dark:bg-neutral-700/20 rounded-r-xl flex flex-col gap-5 items-center justify-between dark:text-white`} ref={ref}>
+                    <div className={`${!expand ? "w-12" : "w-40"} duration-150 h-dvh absolute left-0 top-0 py-4 px-1 bg-neutral-400/20 dark:bg-neutral-700/20 rounded-r-xl flex flex-col gap-5 items-center justify-between dark:text-white`}>
 
                         <button className={`rounded-lg ${!expand ? "w-3/4" : "w-1/5"} h-8 bg-neutral-200/20 flex items-center justify-center`} onClick={()=>setExpand(prev=>!prev)}>
                             {expand ? <IoChevronBackOutline/> : <IoChevronForward/>}
