@@ -1,16 +1,27 @@
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { FaKaggle } from 'react-icons/fa';
+import { FaKaggle,FaInstagram } from 'react-icons/fa';
 import {SiLeetcode, SiLinkedin, SiGithub} from 'react-icons/si';
 import { useSelector } from 'react-redux';
 
 import Avatar from '../assets/avatar.jpg';
+import { useEffect, useRef } from 'react';
+
+import useWindowSize from '../hooks/useWindowSize';
+import useHover from '../hooks/useHover';
 
 
 const About = () => {
 
     const {darkMode} = useSelector(state=>state.theme);
+    const {isMobile,isTablet} = useWindowSize();
+
+    const [hoverRef1,isHovered1] = useHover();
+    const [hoverRef2,isHovered2] = useHover();
+    const [hoverRef3,isHovered3] = useHover();
+    const [hoverRef4,isHovered4] = useHover();
+    const [hoverRef5,isHovered5] = useHover();
 
   return (
     <div className={`${darkMode ? "dark" : ""}`}>
@@ -26,10 +37,26 @@ const About = () => {
                     <div className='flex flex-col gap-y-3'>
                         {/* profile links */}
                         <div className='dark:text-white flex justify-center sm:justify-start gap-x-5 text-2xl'>
-                            <a href="https://github.com/harshpx" className='slide'><SiGithub /></a>
-                            <a href="https://www.linkedin.com/in/harshpx/" className='slide-top'><SiLinkedin /></a>
-                            <a href="https://leetcode.com/harsh_px/" className='slide-bottom'><SiLeetcode /></a>
-                            <a href="https://www.kaggle.com/harshpriye" className='slide-right'><FaKaggle /></a>
+                            <a href="https://github.com/harshpx" className='slide flex items-center gap-x-1' ref={hoverRef1}>
+                                <SiGithub />
+                                <h1 className={`${isHovered1 ? "w-10" : "w-0 overflow-hidden"} transition-all duration-150 text-sm`}>Github</h1>
+                            </a>
+                            <a href="https://www.linkedin.com/in/harshpx/" className='slide-top flex items-center gap-x-1' ref={hoverRef2}>
+                                <SiLinkedin />
+                                <h1 className={`${isHovered2 ? "w-10" : "w-0 overflow-hidden"} transition-all duration-150 text-sm`}>Linkedin</h1>
+                            </a>
+                            <a href="https://leetcode.com/harsh_px/" className='slide-bottom flex items-center gap-x-1' ref={hoverRef3}>
+                                <SiLeetcode />
+                                <h1 className={`${isHovered3 ? "w-10" : "w-0 overflow-hidden"} transition-all duration-150 text-sm`}>Leetcode</h1>
+                            </a>
+                            <a href="https://www.kaggle.com/harshpriye" className='slide-right flex items-center gap-x-1' ref={hoverRef4}>
+                                <FaKaggle />
+                                <h1 className={`${isHovered4 ? "w-10" : "w-0 overflow-hidden"} transition-all duration-150 text-sm`}>Kaggle</h1>
+                            </a>
+                            <a href="https://www.instagram.com/harshhh.hhhh" className='slide-right flex items-center gap-x-1' ref={hoverRef5}>
+                                <FaInstagram size={30}/>
+                                <h1 className={`${isHovered5 ? "w-10" : "w-0 overflow-hidden"} transition-all duration-150 text-sm`}>Instagram</h1>
+                            </a>
                         </div>
                         {/* name and profession */}
                         <div className='flex flex-col text-center sm:text-left gap-y-2'>
