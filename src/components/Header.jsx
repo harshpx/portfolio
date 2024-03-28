@@ -10,6 +10,8 @@ import { FaUser, FaReact, FaUserCircle } from "react-icons/fa";
 import { FaCode } from "react-icons/fa6";
 import { MdDesignServices } from "react-icons/md";
 import { PiHeartStraightFill,PiHeartStraightLight } from "react-icons/pi";
+import useWindowSize from '../hooks/useWindowSize';
+import useHover from '../hooks/useHover';
 
 
 
@@ -17,14 +19,12 @@ const Header = () => {
     const {darkMode} = useSelector(state=>state.theme);
     const dispatch = useDispatch();
 
-    const [width,setWidth] = useState(window.innerWidth);
+    const {width} = useWindowSize();
+    const [hoverRef,isHovered] = useHover();
+
     useEffect(()=>{
-        const widthChanger = ()=>setWidth(window.innerWidth);
-        window.addEventListener('resize',widthChanger);
-        return ()=>{
-            window.removeEventListener('resize',widthChanger);
-        }
-    },[width])
+        if(isHovered) setExpand(true);
+    },[isHovered])
 
 
     const ref = useRef(null);
@@ -96,31 +96,31 @@ const Header = () => {
                 </nav>
                 {/* sidebar */}
                 {width>640 ? <>
-                    <div className={`${!expand ? "w-12" : "w-40"} duration-150 h-dvh absolute left-0 top-0 py-4 px-1 bg-neutral-400/20 dark:bg-neutral-700/20 rounded-r-xl flex flex-col gap-5 items-center justify-between dark:text-white`}>
+                    <div className={`${!expand ? "w-14" : "w-40"} duration-150 h-dvh absolute left-0 top-0 py-4 px-1 bg-neutral-400/20 dark:bg-neutral-700/20 rounded-r-xl flex flex-col gap-5 items-center justify-between dark:text-white`}>
 
-                        <button className={`rounded-lg ${!expand ? "w-3/4" : "w-1/5"} h-8 bg-neutral-200/20 flex items-center justify-center`} onClick={()=>setExpand(prev=>!prev)}>
+                        <button ref={hoverRef} className={`rounded-lg ${!expand ? "w-2/3" : "w-1/5"} h-8 bg-neutral-200/20 flex items-center justify-center`} onClick={()=>setExpand(prev=>!prev)}>
                             {expand ? <IoChevronBackOutline/> : <IoChevronForward/>}
                         </button>
 
                         <div className={`w-full mx-auto flex flex-col gap-2 justify-center items-center`}>
                             <Link to='about' spy={true} smooth={true} offset={0} duration={500} activeClass='act' className={`rounded-lg w-11/12 h-9 px-3 flex items-center ${!expand ? "justify-center" : "justify-start"} cursor-pointer gap-2`}>
-                                <FaUser/>
+                                <FaUser size={20}/>
                                 <h1 className={`${!expand ? "hidden" : ""}`}>About Me</h1>
                             </Link>
                             <Link to='projects' spy={true} smooth={true} offset={10} duration={500} activeClass='act' className={`rounded-lg w-11/12 h-9  px-3 flex items-center ${!expand ? "justify-center" : "justify-start"} cursor-pointer gap-2`}>
-                                <FaCode/>
+                                <FaCode size={20}/>
                                 <h1 className={`${!expand ? "hidden" : ""}`}>Projects</h1>
                             </Link>
                             <Link to='services' spy={true} smooth={true} offset={10} duration={500} activeClass='act' className={`rounded-lg w-11/12 h-9  px-3 flex items-center ${!expand ? "justify-center" : "justify-start"} cursor-pointer gap-2`}>
-                                <MdDesignServices/>
+                                <MdDesignServices size={20}/>
                                 <h1 className={`${!expand ? "hidden" : ""}`}>Services</h1>
                             </Link>
                             <Link to='stack' spy={true} smooth={true} offset={0} duration={500} activeClass='act' className={`rounded-lg w-11/12 h-9  px-3 flex items-center ${!expand ? "justify-center" : "justify-start"} cursor-pointer gap-2`}>
-                                <FaReact/>
+                                <FaReact size={20}/>
                                 <h1 className={`${!expand ? "hidden" : ""}`}>Tech Stack</h1>
                             </Link>
                             <Link to='contact' spy={true} smooth={true} offset={0} duration={500} activeClass='act' className={`rounded-lg w-11/12 h-9  px-3 flex items-center ${!expand ? "justify-center" : "justify-start"} cursor-pointer gap-2`}>
-                                <IoIosMail/>
+                                <IoIosMail size={20}/>
                                 <h1 className={`${!expand ? "hidden" : ""}`}>Contact</h1>
                             </Link>
                         </div>
