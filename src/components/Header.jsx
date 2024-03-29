@@ -45,7 +45,7 @@ const Header = () => {
     return (
         <div className={`${darkMode ? 'dark' : ''}`}>
             <div className='w-full fixed top-0 left-0 bg-neutral-200 dark:bg-slate-900 px-2 sm:px-10 md:px-15 lg:px-25 xl:px-30 font-segoeUI transition-all duration-300 z-10' ref={ref}>
-                <nav className={`${expand && width<640 ? "h-28" : ""} ${!expand && width<640 ? "h-10" : ""} transition-all duration-150 py-2 flex flex-row-reverse gap-4 justify-between items-center text-center text-sm sm:text-base`}>
+                <nav className={`${expand && width<640 ? "h-28" : ""} ${!expand && width<640 ? "h-10" : ""} transition-all duration-150 py-2 flex flex-row-reverse gap-4 justify-between items-center text-center text-sm sm:text-base`} ref={hoverRef}>
                     
                     {/* theme switch and resume button */}
                     <div className='flex gap-2 items-center justify-evenly'>
