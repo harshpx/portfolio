@@ -74,7 +74,7 @@ const About = () => {
 
                     <br/>I am Harsh, a Full-Stack Web-Developer, particularly specializing in the <br/> <span className='text-green-600 dark:text-green-400'>M</span><span className='text-yellow-600 dark:text-yellow-400'>E</span><span className='text-teal-600 dark:text-teal-400'>R</span><span className='text-green-600 dark:text-green-400'>N</span> (<span className='text-green-600 dark:text-green-400'>MongoDB</span>, <span className='text-yellow-600 dark:text-yellow-400'>Express JS</span>, <span className='text-teal-600 dark:text-teal-400'>React JS</span>, <span className='text-green-600 dark:text-green-400'>Node JS</span>), <span className='text-teal-600 dark:text-teal-400'>Tailwind CSS</span>, <span className='text-pink-400'>Socket.io</span> and <span className='text-teal-400'>FastAPI</span>.
 
-                    <br/>Also a Machine Learning Enthusiast, proficient in <span className='text-yellow-600 dark:text-yellow-400'>Python</span>, <span className='text-blue-500 dark:text-blue-300'>Scikit-Learn</span> and <span className='text-orange-600 dark:text-orange-400'>TensorFlow</span>.</p>
+                    <br/>Also a Machine Learning Enthusiast, proficient in <span className='text-yellow-600 dark:text-yellow-400'>Python</span>, <span className='text-blue-500 dark:text-blue-300'>Scikit</span> and <span className='text-orange-600 dark:text-orange-400'>TensorFlow</span>.</p>
                 </div>
             </section>
         </div>

@@ -50,7 +50,7 @@ const Header = () => {
                     {/* theme switch and resume button */}
                     <div className='flex gap-2 items-center justify-evenly'>
                         {/* resume button */}
-                        <a href="https://drive.google.com/file/d/1eUOJdrXZFkVb_KFxfEZjSGs1bGpIlzQB/view?usp=sharing" className='cursor-pointer text-white dark:text-white px-2 py-1 rounded-lg bg-teal-600 hover:scale-110 duration-150'>Resume</a>
+                        <a href="https://drive.google.com/file/d/1vkhDksrsd-kKL8kW0dex3fZpUyh2OpRD/view?usp=sharing" className='cursor-pointer text-white dark:text-white px-2 py-1 rounded-lg bg-teal-600 hover:scale-110 duration-150'>Resume</a>
                         {/* theme switch button */}
                         <div className='cursor-pointer text-2xl rounded-full p-1.5 text-teal-600 dark:text-teal-400 hover:text-teal-400 dark:hover:text-teal-600 hover:bg-black dark:hover:bg-neutral-200' onClick={()=>dispatch(changeTheme())}>
                             {darkMode ? <IoSunny /> : <BsFillMoonStarsFill/>}
@@ -98,7 +98,7 @@ const Header = () => {
                 {width>640 ? <>
                     <div className={`${!expand ? "w-14" : "w-40"} duration-150 h-dvh absolute left-0 top-0 py-4 px-1 bg-neutral-400/20 dark:bg-neutral-700/20 rounded-r-xl flex flex-col gap-5 items-center justify-between dark:text-white`}>
 
-                        <button ref={hoverRef} className={`rounded-lg ${!expand ? "w-2/3" : "w-1/5"} h-8 bg-neutral-200/20 flex items-center justify-center`} onClick={()=>setExpand(prev=>!prev)}>
+                        <button ref={hoverRef} className={`rounded-lg ${!expand ? "w-2/3" : "w-1/4"} h-8 bg-neutral-200/20 flex items-center justify-center`} onClick={()=>setExpand(prev=>!prev)}>
                             {expand ? <IoChevronBackOutline/> : <IoChevronForward/>}
                         </button>
 
