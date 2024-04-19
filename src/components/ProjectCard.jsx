@@ -1,5 +1,5 @@
 import React from 'react';;
-import { SiCss3, SiTailwindcss, SiExpress, SiMongodb, SiNodedotjs, SiReact, SiRedux, SiGithub, SiFirefoxbrowser, SiTensorflow, SiScikitlearn, SiPython, SiStreamlit, SiFlask, SiAppwrite, SiOpencv, SiSocketdotio, SiFastapi, SiAmazonaws} from "react-icons/si";
+import { SiCss3, SiTailwindcss, SiExpress, SiMongodb, SiNodedotjs, SiReact, SiRedux, SiGithub, SiFirefoxbrowser, SiTensorflow, SiScikitlearn, SiPython, SiStreamlit, SiFlask, SiAppwrite, SiOpencv, SiSocketdotio, SiFastapi, SiAmazonaws, SiAntdesign, SiChartdotjs} from "react-icons/si";
 
 
 function ProjectCard({dark,title,description,stack=[],applink,code,image}) {
@@ -73,7 +73,12 @@ function ProjectCard({dark,title,description,stack=[],applink,code,image}) {
                             if(tech=='aws'){
                                 return (<div key={tech} className='flex  items-center gap-x-1'><SiAmazonaws/><span className='text-sm'>AWS</span></div>)
                             }
-
+                            if(tech=='antd'){
+                                return (<div key={tech} className='flex  items-center gap-x-1'><SiAntdesign/><span className='text-sm'>Ant Design</span></div>)
+                            }
+                            if(tech=='chartjs'){
+                                return (<div key={tech} className='flex  items-center gap-x-1'><SiChartdotjs/><span className='text-sm'>Chart.js</span></div>)
+                            }
                         })}
                         {/* <div key={tech} className='flex  items-center gap-x-1'><SiTailwindcss /><span className='text-sm'>Tailwind CSS</span></div>
                         <div className='flex  items-center gap-x-1'><SiExpress /><span className='text-sm'>Express JS</span></div>

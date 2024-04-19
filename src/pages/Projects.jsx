@@ -11,6 +11,7 @@ import VAR from '../assets/icons/var.png';
 import TTT from '../assets/icons/tic-tac-toe.png'
 import MLAPI from '../assets/icons/ml-api.png';
 import Comments from '../assets/icons/comments.png';
+import Dashboard from '../assets/icons/dashboard.png'
 
 
 
@@ -33,8 +34,9 @@ const Projects = () => {
 
                                 <ProjectCard dark={darkMode} title="Mini Tic-Tac-Toe" description="A Multiplayer Tic-Tac-Toe Game, with In-Game Chat Feature." image={TTT} stack={['react','socket','express','tailwind']} applink='https://mini-tic-tac-toe.vercel.app/' code='https://github.com/harshpx/tic-tac-toe-socket' />
 
-                                <ProjectCard dark={darkMode} title="MiniBlog" description="Micro-Blogging App" image={MiniBlogImg} stack={['react','redux','tailwind','appwrite']} applink='https://miniblogger.vercel.app/' code='https://github.com/harshpx/miniBlog' />
+                                <ProjectCard dark={darkMode} title="Dashboard" description="An Interactive Information Dashboard Component that fetches data from an API and Displays Results in a Beautiful Dashboard" image={Dashboard} stack={['react','tailwind','chartjs','antd']} applink='https://dashboard-harshpx.vercel.app' code='https://github.com/harshpx/dashboard'/>
 
+                                <ProjectCard dark={darkMode} title="MiniBlog" description="Micro-Blogging App" image={MiniBlogImg} stack={['react','redux','tailwind','appwrite']} applink='https://miniblogger.vercel.app/' code='https://github.com/harshpx/miniBlog' />
 
                                 <ProjectCard dark={darkMode} title="TealFox" description="UserStyle CSS custom theme for Firefox" image={TealFoxImg} stack={['css']} code='https://github.com/harshpx/TealFox' />
 

@@ -18,19 +18,25 @@ import useHover from '../hooks/useHover';
 const Header = () => {
     const {darkMode} = useSelector(state=>state.theme);
     const dispatch = useDispatch();
+    const [expand,setExpand] = useState(false);
+    const {width,isMobile} = useWindowSize();
 
-    const {width} = useWindowSize();
-    const [hoverRef,isHovered] = useHover();
+    // const [hoverRef,isHovered] = useHover();
+    // useEffect(()=>{
+    //     if(isHovered) setExpand(true);
+    // },[isHovered])
 
     useEffect(()=>{
-        if(isHovered) setExpand(true);
-    },[isHovered])
+        if(!isMobile) setExpand(true);
+        else setExpand(false);
+    },[isMobile])
 
 
     const ref = useRef(null);
+
     useEffect(()=>{
         const outsideClickHandler = (event)=>{
-            if(ref.current && !ref.current.contains(event.target)){
+            if(ref.current && !ref.current.contains(event.target) && isMobile){
                 setExpand(false);
             }
         }
@@ -40,12 +46,10 @@ const Header = () => {
         }
     },[])
 
-    const [expand,setExpand] = useState(false);
-
     return (
         <div className={`${darkMode ? 'dark' : ''}`}>
             <div className='w-full fixed top-0 left-0 bg-neutral-200 dark:bg-slate-900 px-2 sm:px-10 md:px-15 lg:px-25 xl:px-30 font-segoeUI transition-all duration-300 z-10' ref={ref}>
-                <nav className={`${expand && width<640 ? "h-28" : ""} ${!expand && width<640 ? "h-10" : ""} transition-all duration-150 py-2 flex flex-row-reverse gap-4 justify-between items-center text-center text-sm sm:text-base`} ref={hoverRef}>
+                <nav className={`${expand && width<640 ? "h-28" : ""} ${!expand && width<640 ? "h-10" : ""} transition-all duration-150 py-2 flex flex-row-reverse gap-4 justify-between items-center text-center text-sm sm:text-base`}>
                     
                     {/* theme switch and resume button */}
                     <div className='flex gap-2 items-center justify-evenly'>
@@ -58,26 +62,26 @@ const Header = () => {
                     </div>
 
                     {/* links */}
-                    {width<640 ? <>
-                        <div className={`flex flex-wrap items-center justify-start gap-1 text-black dark:text-white`}>
+                    <>
+                        <div className={`flex flex-wrap items-center justify-start gap-1 md:gap-2 text-black dark:text-white`}>
 
-                            <Link to='about' spy={true} smooth={true} offset={0} duration={500} activeClass='act' className={`rounded-lg flex items-center ${!expand ? "justify-center w-8 h-8" : "justify-start h-8 px-1"} cursor-pointer gap-2`}>
+                            <Link to='about' spy={true} smooth={true} offset={0} duration={500} activeClass='act' className={`rounded-lg flex items-center ${!expand ? "justify-center w-8 h-8" : "justify-start h-8 px-1"} cursor-pointer gap-2 md:px-2 md:py-5`}>
                                 <FaUserCircle size={20}/>
                                 <h1 className={`${!expand ? "hidden" : ""}`}>About Me</h1>
                             </Link>
-                            <Link to='projects' spy={true} smooth={true} offset={10} duration={500} activeClass='act' className={`rounded-lg  flex items-center ${!expand ? "justify-center w-8 h-8" : "justify-start h-8 px-1"} cursor-pointer gap-2`}>
+                            <Link to='projects' spy={true} smooth={true} offset={10} duration={500} activeClass='act' className={`rounded-lg  flex items-center ${!expand ? "justify-center w-8 h-8" : "justify-start h-8 px-1"} cursor-pointer gap-2 md:px-2 md:py-5`}>
                                 <FaCode size={20}/>
                                 <h1 className={`${!expand ? "hidden" : ""}`}>Projects</h1>
                             </Link>
-                            <Link to='services' spy={true} smooth={true} offset={10} duration={500} activeClass='act' className={`rounded-lg  flex items-center ${!expand ? "justify-center w-8 h-8" : "justify-start h-8 px-1"} cursor-pointer gap-2`}>
+                            <Link to='services' spy={true} smooth={true} offset={10} duration={500} activeClass='act' className={`rounded-lg  flex items-center ${!expand ? "justify-center w-8 h-8" : "justify-start h-8 px-1"} cursor-pointer gap-2 md:px-2 md:py-5`}>
                                 <MdDesignServices size={20}/>
                                 <h1 className={`${!expand ? "hidden" : ""}`}>Services</h1>
                             </Link>
-                            <Link to='stack' spy={true} smooth={true} offset={0} duration={500} activeClass='act' className={`rounded-lg  flex items-center ${!expand ? "justify-center w-8 h-8" : "justify-start h-8 px-1"} cursor-pointer gap-2`}>
+                            <Link to='stack' spy={true} smooth={true} offset={0} duration={500} activeClass='act' className={`rounded-lg  flex items-center ${!expand ? "justify-center w-8 h-8" : "justify-start h-8 px-1"} cursor-pointer gap-2 md:px-2 md:py-5`}>
                                 <FaReact size={20}/>
                                 <h1 className={`${!expand ? "hidden" : ""}`}>Tech Stack</h1>
                             </Link>
-                            <Link to='contact' spy={true} smooth={true} offset={0} duration={500} activeClass='act' className={`rounded-lg  flex items-center ${!expand ? "justify-center w-8 h-8" : "justify-start h-8 px-1"} cursor-pointer gap-2`}>
+                            <Link to='contact' spy={true} smooth={true} offset={0} duration={500} activeClass='act' className={`rounded-lg  flex items-center ${!expand ? "justify-center w-8 h-8" : "justify-start h-8 px-1"} cursor-pointer gap-2 md:px-2 md:py-5`}>
                                 <IoIosMail size={20}/>
                                 <h1 className={`${!expand ? "hidden" : ""}`}>Contact</h1>
                             </Link>
@@ -87,15 +91,15 @@ const Header = () => {
                                 <h1>125</h1>
                             </button> */}
 
-                            <button className={`rounded-lg  flex items-center ${!expand ? "w-8 h-8" : "w-8 h-8"} justify-center cursor-pointer gap-2`} onClick={()=>setExpand(prev=>!prev)}>
+                            {isMobile ? <button className={`rounded-lg  flex items-center ${!expand ? "w-8 h-8" : "w-8 h-8"} justify-center cursor-pointer gap-2`} onClick={()=>setExpand(prev=>!prev)}>
                                 {expand ? <IoChevronUp/> : <IoChevronDown/>}
-                            </button>
+                            </button> : null}
 
                         </div>
-                    </> : null}
+                    </>
                 </nav>
                 {/* sidebar */}
-                {width>640 ? <>
+                {/* {width>640 ? <>
                     <div className={`${!expand ? "w-14" : "w-40"} duration-150 h-dvh absolute left-0 top-0 py-4 px-1 bg-neutral-400/20 dark:bg-neutral-700/20 rounded-r-xl flex flex-col gap-5 items-center justify-between dark:text-white`}>
 
                         <button ref={hoverRef} className={`rounded-lg ${!expand ? "w-2/3" : "w-1/4"} h-8 bg-neutral-200/20 flex items-center justify-center`} onClick={()=>setExpand(prev=>!prev)}>
@@ -132,7 +136,7 @@ const Header = () => {
                         </button>
 
                     </div>
-                </> : null}
+                </> : null} */}
             </div>
         </div>
     )
