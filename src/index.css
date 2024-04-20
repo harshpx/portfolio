@@ -163,3 +163,7 @@
     background-color: rgb(54, 169, 169);
     color: white;
 }
+
+.custom-close-button .ant-modal-close-x {
+    color: white;
+}
