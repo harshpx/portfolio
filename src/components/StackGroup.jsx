@@ -130,7 +130,7 @@ const StackGroup = ({title,stack}) => {
             onOk={()=>setShowModal(false)}
             centered
             styles={{
-    			content: {color:darkMode?'white':'black', backgroundColor:darkMode?'#0f172a':'#e5e5e5', boxShadow:darkMode?'0 4px 8px 0 rgba(80, 201, 235, 0.2), 0 6px 20px 0 rgba(80, 201, 235, 0.19)':'0 25px 50px -12px rgb(0 0 0 / 0.25)'},
+    			content: {color:darkMode?'white':'black', backgroundColor:darkMode?'#0f172a':'#e5e5e5', boxShadow:'0 25px 50px -12px rgb(0 0 0 / 0.25)', border:darkMode?'1px solid #a3a3a3':'', maxWidth:'90%', overflow:'scroll'},
   			}}
             className={darkMode?"custom-close-button":""}
             >
