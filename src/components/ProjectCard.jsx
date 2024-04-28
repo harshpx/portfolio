@@ -1,5 +1,17 @@
 import React from 'react';;
-import { SiCss3, SiTailwindcss, SiExpress, SiMongodb, SiNodedotjs, SiReact, SiRedux, SiGithub, SiFirefoxbrowser, SiTensorflow, SiScikitlearn, SiPython, SiStreamlit, SiFlask, SiAppwrite, SiOpencv, SiSocketdotio, SiFastapi, SiAmazonaws, SiAntdesign, SiChartdotjs} from "react-icons/si";
+import {SiLeetcode, SiLinkedin, SiGithub, SiPostcss,
+SiPostgresql,SiHtml5,SiCss3,SiJavascript,SiReact,SiRedux,SiFramer,SiTailwindcss,
+SiExpress,SiSocketdotio,SiNodedotjs,SiVercel,SiPython,SiTensorflow,SiScikitlearn,
+SiStreamlit,SiFlask,SiAppwrite,SiFirebase,SiMysql,SiMongodb,SiHeroku,SiAntdesign,
+SiChartdotjs,SiFastapi,SiAmazonaws,SiNetlify,SiOpencv,SiRedis,SiAzuredevops,SiFirefoxbrowser} from 'react-icons/si';
+import { HiSquare3Stack3D } from "react-icons/hi2";
+import { BsWindowFullscreen } from "react-icons/bs";
+import { FaServer } from "react-icons/fa6";
+import { AiOutlineApi } from "react-icons/ai";
+import { GiArtificialIntelligence } from "react-icons/gi";
+
+
+
 
 
 function ProjectCard({dark,title,description,stack=[],applink,code,image}) {
@@ -79,11 +91,40 @@ function ProjectCard({dark,title,description,stack=[],applink,code,image}) {
                             if(tech=='chartjs'){
                                 return (<div key={tech} className='flex  items-center gap-x-1'><SiChartdotjs/><span className='text-sm'>Chart.js</span></div>)
                             }
+                            if(tech=='vercel'){
+                                return (<div key={tech} className='flex  items-center gap-x-1'><SiVercel/><span className='text-sm'>Vercel</span></div>)
+                            }
+                            if(tech=='heroku'){
+                                return (<div key={tech} className='flex  items-center gap-x-1'><SiHeroku/><span className='text-sm'>Heroku</span></div>)
+                            }
+                            if(tech=='devops'){
+                                return (<div key={tech} className='flex  items-center gap-x-1'><SiAzuredevops/><span className='text-sm'>DevOps</span></div>)
+                            }
+                            if(tech=='mlops'){
+                                return (<div key={tech} className='flex  items-center gap-x-1'><SiAzuredevops/><span className='text-sm'>MLOps</span></div>)
+                            }
+                            if(tech=='fullstack'){
+                                return (<div key={tech} className='flex  items-center gap-x-1'><HiSquare3Stack3D/><span className='text-sm'>Full Stack</span></div>)
+                            }
+                            if(tech=='frontend'){
+                                return (<div key={tech} className='flex  items-center gap-x-1'><BsWindowFullscreen/><span className='text-sm'>Frontend</span></div>)
+                            }
+                            if(tech=='ui'){
+                                return (<div key={tech} className='flex  items-center gap-x-1'><BsWindowFullscreen/><span className='text-sm'>UI</span></div>)
+                            }
+                            if(tech=='backend'){
+                                return (<div key={tech} className='flex  items-center gap-x-1'><FaServer/><span className='text-sm'>Backend</span></div>)
+                            }
+                            if(tech=='api'){
+                                return (<div key={tech} className='flex  items-center gap-x-1'><AiOutlineApi/><span className='text-sm'>API</span></div>)
+                            }
+                            if(tech=='firefox'){
+                                return (<div key={tech} className='flex  items-center gap-x-1'><SiFirefoxbrowser/><span className='text-sm'>Backend</span></div>)
+                            }
+                            if(tech=='ml'){
+                                return (<div key={tech} className='flex  items-center gap-x-1'><GiArtificialIntelligence/><span className='text-sm'>Machine Learning</span></div>)
+                            }
                         })}
-                        {/* <div key={tech} className='flex  items-center gap-x-1'><SiTailwindcss /><span className='text-sm'>Tailwind CSS</span></div>
-                        <div className='flex  items-center gap-x-1'><SiExpress /><span className='text-sm'>Express JS</span></div>
-                        <div className='flex  items-center gap-x-1'><SiExpress /><span className='text-sm'>Express JS</span></div>
-                        <div className='flex  items-center gap-x-1'><SiExpress /><span className='text-sm'>Express JS</span></div> */}
                     </div>
                     {/* links */}
                     <div className='flex items-center justify-between gap-x-1 mt-3 underline'>
