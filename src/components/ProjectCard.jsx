@@ -124,6 +124,9 @@ function ProjectCard({dark,title,description,stack=[],applink,code,image}) {
                             if(tech=='ml'){
                                 return (<div key={tech} className='flex  items-center gap-x-1'><GiArtificialIntelligence/><span className='text-sm'>Machine Learning</span></div>)
                             }
+                            if(tech=='dl'){
+                                return (<div key={tech} className='flex  items-center gap-x-1'><GiArtificialIntelligence/><span className='text-sm'>Deep Learning</span></div>)
+                            }
                         })}
                     </div>
                     {/* links */}
