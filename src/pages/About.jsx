@@ -5,7 +5,7 @@ import { FaKaggle,FaInstagram } from 'react-icons/fa';
 import {SiLeetcode, SiLinkedin, SiGithub} from 'react-icons/si';
 import { useSelector } from 'react-redux';
 
-import Avatar from '../assets/avatar4.jpg';
+import Avatar from '../assets/avatar5.jpg';
 import { useEffect, useRef } from 'react';
 
 import useWindowSize from '../hooks/useWindowSize';
