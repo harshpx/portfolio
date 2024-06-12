@@ -131,8 +131,8 @@ function ProjectCard({dark,title,description,stack=[],applink,code,image}) {
                     </div>
                     {/* links */}
                     <div className='flex items-center justify-between gap-x-1 mt-3 underline'>
-                        {applink ? (<><SiFirefoxbrowser /> <a href={applink} className='mr-4'>App Link</a></>) : <></>}
-                        <SiGithub/> <a href={code} className=''>Source Code</a>
+                        {applink ? (<><SiFirefoxbrowser /> <a href={applink} target='_blank' className='mr-4'>App Link</a></>) : <></>}
+                        <SiGithub/> <a href={code} target='_blank' className=''>Source Code</a>
                     </div>
                 </div>
             </div>

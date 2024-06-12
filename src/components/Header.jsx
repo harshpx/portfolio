@@ -54,7 +54,7 @@ const Header = () => {
                     {/* theme switch and resume button */}
                     <div className='flex gap-2 items-center justify-evenly'>
                         {/* resume button */}
-                        <a href="https://drive.google.com/file/d/1fr2JMHolR1VbAC4Mv7v2Pp3l__GoWiPl/view?usp=sharing" className='cursor-pointer text-white dark:text-white px-2 py-1 rounded-lg bg-teal-600 hover:scale-110 duration-150'>Resume</a>
+                        <a href="https://drive.google.com/file/d/1R12sXlhcXaA1w-c-u7TmKlM62BX0HMOL/view?usp=sharing" target='_blank' className='cursor-pointer text-white dark:text-white px-2 py-1 rounded-lg bg-teal-600 hover:scale-110 duration-150'>Resume</a>
                         {/* theme switch button */}
                         <div className='cursor-pointer text-2xl rounded-full p-1.5 text-teal-600 dark:text-teal-400 hover:text-teal-400 dark:hover:text-teal-600 hover:bg-black dark:hover:bg-neutral-200' onClick={()=>dispatch(changeTheme())}>
                             {darkMode ? <IoSunny /> : <BsFillMoonStarsFill/>}

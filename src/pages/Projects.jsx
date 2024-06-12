@@ -14,6 +14,7 @@ import Comments from '../assets/icons/comments.png';
 import Dashboard from '../assets/icons/dashboard.png';
 import Weather from '../assets/icons/weather.png';
 import Deepfake from '../assets/icons/deepfake.png';
+import CodeLab from '../assets/icons/codelab.png';
 
 
 
@@ -37,11 +38,12 @@ const Projects = () => {
                             <div className='columns-1 md:columns-2 gap-5'>
                                 {!isMobile ? 
                                 <>
+                                    <ProjectCard dark={darkMode} title="CodeLab" description="Codelab is an online code compiler that is specifically designed for competitive programmers" image={CodeLab} stack={['react','tailwind','antd','node','express','mongodb','fullstack']} applink="https://codelab-harshpx.vercel.app" code="https://github.com/harshpx/CodeLab"/>
                                     <ProjectCard dark={darkMode} title="Mini Tic-Tac-Toe" description="A Multiplayer Tic-Tac-Toe Game, with In-Game Chat Feature." image={TTT} stack={['react','socket','express','tailwind','fullstack','vercel','heroku']} applink='https://mini-tic-tac-toe.vercel.app/' code='https://github.com/harshpx/tic-tac-toe-socket' />
                                     <ProjectCard dark={darkMode} title="Deepfake Detection" description="A CNN Based Deep-Learning Deepfake Detection App" image={Deepfake} stack={['python','tensorflow','opencv','fastapi','react','tailwind','dl','fullstack']} code='https://github.com/harshpx/deepfake-detection' />
                                     <ProjectCard dark={darkMode} title="Weather App" description="The Most Beautiful Weather App!" image={Weather} stack={['react','tailwind','antd','frontend','vercel']} applink='https://weather-harshpx.vercel.app/' code='https://github.com/harshpx/weather'/>
                                     <ProjectCard dark={darkMode} title="Comments" description="A three-level, Reusable comment section component made using React JS and Tailwind CSS " image={Comments} stack={['react','tailwind','frontend','vercel']} applink='https://commentbox.vercel.app' code='https://github.com/harshpx/comments-project' />
-                                    <ProjectCard dark={darkMode} title="TealFox" description="UserStyle CSS custom theme for Firefox" image={TealFoxImg} stack={['css','firefox','ui']} code='https://github.com/harshpx/TealFox' />
+                                    {/* <ProjectCard dark={darkMode} title="TealFox" description="UserStyle CSS custom theme for Firefox" image={TealFoxImg} stack={['css','firefox','ui']} code='https://github.com/harshpx/TealFox' /> */}
                                     <ProjectCard dark={darkMode} title="Memoize Notes" description="A Full Stack, industry standard Notes App" image={MemoizeImg} stack={['react','tailwind','redux','express','node','mongodb','fullstack','vercel']} applink='https://memoize-notes.vercel.app/' code='https://github.com/harshpx/memoize' />
                                     <ProjectCard dark={darkMode} title="Dog Breed Identifier" description="A CNN based Deep-Learning Image Classification Model for Dog Breed Identification with React frontend and FastAPI server" image={DogBreedPred} stack={['react','tailwind','css','python','fastapi','tensorflow','dl','fullstack','vercel']} applink='https://dog-breed-identifier-client.vercel.app/' code='https://github.com/harshpx/Dog-Breed-Identifier-client' />
                                     <ProjectCard dark={darkMode} title="ml-api" description="Master API for all my Machine Learning/Deep Learning models" image={MLAPI} stack={['python','fastapi','tensorflow','opencv','ml','api','aws']} applink="https://mlapi.online" code='https://github.com/harshpx/ml-api' />
